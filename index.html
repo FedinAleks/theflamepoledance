@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flame Pole Dance Studio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Rubik+Mono+One&display=swap" rel="stylesheet">    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="home" class="block_1">
+        <div class="wrapper">            
+                <header>
+                    <img id="image_logo" class="image_logo_first" src="./image/logo_image.svg">
+                    <button id="play_button" class="play_button" onclick="playVideo()"> 
+                        <svg class="play_icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <path d="M10.1562 6.25C8.29145 6.25 6.50302 6.99079 5.18441 8.30941C3.86579 9.62802 3.125 11.4164 3.125 13.2812V36.7188C3.125 38.5836 3.86579 40.372 5.18441 41.6906C6.50302 43.0092 8.29145 43.75 10.1562 43.75H39.8438C41.7086 43.75 43.497 43.0092 44.8156 41.6906C46.1342 40.372 46.875 38.5836 46.875 36.7188V13.2812C46.875 11.4164 46.1342 9.62802 44.8156 8.30941C43.497 6.99079 41.7086 6.25 39.8438 6.25H10.1562ZM6.25 13.2812C6.25 12.2452 6.66155 11.2517 7.39411 10.5191C8.12668 9.78655 9.12025 9.375 10.1562 9.375H39.8438C40.8798 9.375 41.8733 9.78655 42.6059 10.5191C43.3385 11.2517 43.75 12.2452 43.75 13.2812V36.7188C43.75 37.7548 43.3385 38.7483 42.6059 39.4809C41.8733 40.2135 40.8798 40.625 39.8438 40.625H10.1562C9.12025 40.625 8.12668 40.2135 7.39411 39.4809C6.66155 38.7483 6.25 37.7548 6.25 36.7188V13.2812ZM18.75 18.7516V31.25C18.7502 31.5196 18.8201 31.7847 18.9531 32.0193C19.086 32.2539 19.2774 32.4501 19.5086 32.5888C19.7398 32.7275 20.003 32.8041 20.2726 32.8109C20.5421 32.8178 20.8089 32.7549 21.0469 32.6281L32.7625 26.3797C33.0121 26.2463 33.2208 26.0477 33.3663 25.805C33.5118 25.5622 33.5887 25.2846 33.5887 25.0016C33.5887 24.7186 33.5118 24.4409 33.3663 24.1982C33.2208 23.9554 33.0121 23.7568 32.7625 23.6234L21.0484 17.3734C20.8103 17.2463 20.5432 17.183 20.2733 17.1898C20.0034 17.1965 19.7398 17.2731 19.5083 17.4121C19.2768 17.5511 19.0853 17.7476 18.9524 17.9827C18.8195 18.2177 18.7498 18.4816 18.75 18.7516Z" fill="#242424"/>
+                        </svg>
+                        <img id="letters_button" class="letters_button" src="./image/letters_button.svg">
+                    </button>
+                    <div class="youtube_video" id="player"></div>
+                </header>
+                <div class="main_text_block_1">
+                    <div>
+                        <p class="subtitle">Отримай незабутні <span class="pink_text_subtitle">емоції</span></p>
+                        <h1>Наша студія - концентрація жіночої <span class="pink_text_title">суперсили</span></h1>
+                        <p class="subtitle">Місце краси, саморозвитку та відпочинку</p>
+                        <div class="buttons_block_1">
+                            <button id="pink_button" class="pink_button_homepage" onclick="openTelegramChat()">Записатись</button>
+                            <button class="pinkborder_button" onclick="scrollToSchedule()">Розклад</button>
+                        </div>
+                    </div>
+                    <nav class="action_icons">
+                        <ul class="main_list_icons">
+                            <li>
+                                <svg class="icons_nav" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <g clip-path="url(#clip0_1462_2761)">
+                                    <path d="M29.334 9.33325H32.0007M12.0007 1.33325H28.0007C30.8296 1.33325 33.5427 2.45706 35.5431 4.45745C37.5435 6.45783 38.6673 9.17094 38.6673 11.9999V27.9999C38.6673 30.8289 37.5435 33.542 35.5431 35.5424C33.5427 37.5428 30.8296 38.6666 28.0007 38.6666H12.0007C9.17168 38.6666 6.45857 37.5428 4.45818 35.5424C2.45779 33.542 1.33398 30.8289 1.33398 27.9999V11.9999C1.33398 9.17094 2.45779 6.45783 4.45818 4.45745C6.45857 2.45706 9.17168 1.33325 12.0007 1.33325ZM20.0007 27.9999C17.8789 27.9999 15.8441 27.1571 14.3438 25.6568C12.8435 24.1565 12.0007 22.1217 12.0007 19.9999C12.0007 17.8782 12.8435 15.8434 14.3438 14.3431C15.8441 12.8428 17.8789 11.9999 20.0007 11.9999C22.1224 11.9999 24.1572 12.8428 25.6575 14.3431C27.1578 15.8434 28.0007 17.8782 28.0007 19.9999C28.0007 22.1217 27.1578 24.1565 25.6575 25.6568C24.1572 27.1571 22.1224 27.9999 20.0007 27.9999Z" stroke-width="2.66667"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1462_2761">
+                                        <rect width="40" height="40" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                                <a href="#">
+                                    <i class="icon_instagram">
+
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <svg class="icons_nav" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M35.2348 29.2188C33.9942 27.9688 30.9895 26.1446 29.5317 25.4094C27.6333 24.4532 27.477 24.3751 25.9848 25.4837C24.9895 26.2235 24.3278 26.8844 23.1629 26.636C21.9981 26.3876 19.4669 24.9868 17.2504 22.7774C15.034 20.568 13.552 17.9633 13.3028 16.8024C13.0536 15.6415 13.7254 14.9876 14.4583 13.9899C15.4911 12.5837 15.4129 12.3493 14.5301 10.4508C13.8419 8.97428 11.9645 5.99772 10.7098 4.76334C9.36764 3.43756 9.36764 3.67194 8.50279 4.03131C7.79871 4.32755 7.12323 4.68765 6.48482 5.10709C5.23482 5.93756 4.54107 6.62741 4.05592 7.66413C3.57076 8.70084 3.35279 11.1313 5.85826 15.6829C8.36373 20.2344 10.1215 22.5618 13.7598 26.1899C17.3981 29.818 20.1958 31.7688 24.2856 34.0626C29.345 36.8962 31.2856 36.3438 32.3255 35.8594C33.3653 35.3751 34.0583 34.6876 34.8903 33.4376C35.3108 32.8002 35.6717 32.1255 35.9684 31.4219C36.3286 30.5602 36.563 30.5602 35.2348 29.2188Z" stroke-width="2.5" stroke-miterlimit="10"/>
+                                </svg>
+                                <a href="#">
+                                    <i class="icon_call">
+
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <svg class="icons_nav" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path class="mail" d="M2.91667 5H37.0833C38.6933 5 40 6.30667 40 7.91667V31.25C40 32.0235 39.6927 32.7654 39.1457 33.3124C38.5987 33.8594 37.8569 34.1667 37.0833 34.1667H2.91667C2.14312 34.1667 1.40125 33.8594 0.854272 33.3124C0.307291 32.7654 0 32.0235 0 31.25L0 7.91667C0 6.30667 1.30667 5 2.91667 5ZM2.5 12.3533V31.25C2.5 31.48 2.68667 31.6667 2.91667 31.6667H37.0833C37.1938 31.6667 37.2998 31.6228 37.378 31.5446C37.4561 31.4665 37.5 31.3605 37.5 31.25V12.3533L21.6333 23.075C20.6467 23.7417 19.3533 23.7417 18.3667 23.075L2.5 12.3533ZM2.5 7.91667V9.33667L19.7667 21.0033C19.8356 21.0499 19.9168 21.0748 20 21.0748C20.0832 21.0748 20.1644 21.0499 20.2333 21.0033L37.5 9.33667V7.91667C37.5 7.80616 37.4561 7.70018 37.378 7.62204C37.2998 7.5439 37.1938 7.5 37.0833 7.5H2.91667C2.80616 7.5 2.70018 7.5439 2.62204 7.62204C2.5439 7.70018 2.5 7.80616 2.5 7.91667Z" fill="#242424" stroke="none"/>
+                                </svg>
+                                <a href="#">
+                                    <i class="icon_mail">
+
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <nav id="menu" class="menu">
+                    <ul class="desktop_menu">
+                        <li><a href="#home" class="image_logo"><img src="./image/logo_image.svg" alt="Logo"></a></li>
+                        <li><a href="#home">Головна</a></li>
+                        <img class="menu_line" src="./image/Line (menu).svg">
+                        <li><a href="#about">Про нас</a></li>
+                        <img class="menu_line" src="./image/Line (menu).svg">
+                        <li><a href="#services">Напрямки</a></li>
+                        <img class="menu_line" src="./image/Line (menu).svg">
+                        <li><a href="#schedule">Розклад</a></li>
+                        <img class="menu_line" src="./image/Line (menu).svg">
+                        <li><a href="#prices">Ціни</a></li>
+                        <img class="menu_line" src="./image/Line (menu).svg">
+                        <li><a href="#contact">Контакти</a></li>
+                        <li><button id="pink_button" class="pink_button" onclick="openTelegramChat()">Записатись</button></li>                    </ul>
+                </nav>
+        </div>
+    </div>
+    
+    <div class="block_subscribe">
+        <div class="wrapper_subscribe">
+            <p class="subtitle_subscribe">"Танець - це твоя мова, де кожен рух - це слово, а кожен виступ - це історія."</p>
+            <svg class="line_subscribe" xmlns="http://www.w3.org/2000/svg" width="332" height="108" viewBox="0 0 332 108" fill="none">
+                <path d="M0.477429 45.5005C0.201568 45.513 -0.011956 45.7467 0.00050972 46.0226C0.0129755 46.2984 0.24671 46.512 0.522571 46.4995L0.477429 45.5005ZM235 11L235.381 10.6757L235 11ZM331.321 104.883C331.533 104.706 331.561 104.39 331.383 104.179L328.491 100.731C328.314 100.519 327.999 100.492 327.787 100.669C327.575 100.847 327.548 101.162 327.725 101.373L330.296 104.438L327.231 107.009C327.019 107.186 326.992 107.501 327.169 107.713C327.346 107.925 327.662 107.952 327.873 107.775L331.321 104.883ZM0.522571 46.4995C57.975 43.9033 123.667 43.3939 171.442 39.4137C195.322 37.4244 214.799 34.5636 226.558 30.115C232.418 27.898 236.489 25.2412 238.152 21.9842C239.856 18.6467 238.955 14.8703 235.381 10.6757L234.619 11.3243C238.069 15.3722 238.702 18.7091 237.261 21.5294C235.78 24.4303 232.029 26.9759 226.204 29.1797C214.593 33.5727 195.246 36.4273 171.359 38.4172C123.603 42.3957 57.9959 42.9013 0.477429 45.5005L0.522571 46.4995ZM235.381 10.6757C225.837 -0.522994 212.643 -1.44041 201.899 3.78465C191.176 8.9996 182.843 20.3516 182.938 33.7535C183.033 47.1766 191.577 62.5025 214.288 75.6979C236.995 88.8906 273.921 99.995 330.956 104.998L331.044 104.002C274.079 99.005 237.318 87.9219 214.79 74.8333C192.268 61.7474 184.03 46.6983 183.938 33.7464C183.846 20.7732 191.919 9.75023 202.336 4.68394C212.733 -0.372228 225.414 0.522903 234.619 11.3243L235.381 10.6757Z" fill="#242424"/>
+            </svg>
+            <div class="sticker">
+                <p class="subcribe_text1" >Перше пробне відвідування</p>
+                <p class="subcribe_text2">150 грн</p>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="block_2">
+        <h2>Про нас</h2>
+        <div class="wrapper_block2">
+            <div class="block2_part1">
+                <p class="main_text"><span class="pink_maintext">The Flame</span> - це не просто студія танцю, це <span class="pink_maintext">магічний світ</span>, який почався з маленької мрії та перетворився
+                    в незрівнянне місце, де <span class="pink_maintext">танець</span> стає життям 
+                    і змінюється не лише тіло, а й якість життя учениць.</p>
+                <p class="main_text">Наша <span class="pink_maintext">мета</span> - розвивати ваш потенціал та допомогти вам знайти в собі справжній <span class="pink_maintext">вогонь</span>, який розгортається під кожним рухом та плине через кожену з вас. 
+                    Нехай The Flame стане для вас не лише місцем танцю, а й вашою другою родиною та джерелом нескінченного <span class="pink_maintext">натхнення</span> і радості.</p>
+                <img class="block2_part1_image" src="./image/image1_block_2.png">
+            </div>
+            <div class="block2_part2">
+                <img class="block2_part2_image" src="./image/image2_block2.png">
+                <p class="main_text">Ми створюємо атмосферу, де кожна учениця відчуває себе як частина великої родини, де <span class="pink_maintext">підтримка</span> та дружба є не менш важливими, ніж танці.</p>
+                <p class="main_text">Ми надихаємо та підтримуємо одна одну, допомагаючи <span class="pink_maintext">рости</span> як танцівницям і як особистостям.</p>
+                <svg class="block2_line" xmlns="http://www.w3.org/2000/svg" width="265" height="125" viewBox="0 0 265 125" fill="none">
+                    <path d="M31.1076 0.511719C30.8379 0.452277 30.5711 0.622699 30.5117 0.892368C30.4522 1.16204 30.6226 1.42883 30.8923 1.48828L31.1076 0.511719ZM3.00056 120L3.45221 119.785L3.00056 120ZM264.211 110.453C264.461 110.337 264.57 110.039 264.453 109.789L262.554 105.709C262.438 105.459 262.14 105.35 261.89 105.467C261.64 105.583 261.531 105.881 261.648 106.131L263.336 109.758L259.709 111.446C259.459 111.562 259.35 111.86 259.467 112.11C259.583 112.36 259.881 112.469 260.131 112.352L264.211 110.453ZM30.8923 1.48828C41.5893 3.84619 49.3574 7.91896 54.7594 13.1538C60.1584 18.3857 63.2223 24.8055 64.4692 31.91C66.9673 46.1441 62.1678 63.1218 54.1967 78.6471C46.2307 94.1625 35.1426 108.138 25.1826 116.354C20.1942 120.469 15.5402 123.095 11.7391 123.792C9.84746 124.139 8.19639 124.003 6.82084 123.365C5.45081 122.731 4.30218 121.575 3.45221 119.785L2.54892 120.215C3.4811 122.177 4.78342 123.524 6.4005 124.273C8.01207 125.019 9.88428 125.149 11.9195 124.776C15.9721 124.033 20.7861 121.277 25.819 117.125C35.9017 108.809 47.0697 94.7178 55.0863 79.1038C63.0979 63.4997 68.0074 46.2855 65.4541 31.7371C64.1752 24.4503 61.0232 17.8313 55.4553 12.4356C49.8904 7.04295 41.9404 2.89957 31.1076 0.511719L30.8923 1.48828ZM3.45221 119.785C1.12502 114.886 0.862251 110.174 2.46399 105.774C4.07055 101.362 7.5725 97.2114 12.8704 93.4937C23.4736 86.053 41.1476 80.4335 64.6273 77.9345C111.566 72.9387 181.495 80.4363 263.829 110.47L264.171 109.53C181.729 79.4573 111.645 71.9246 64.5215 76.9401C40.9698 79.4468 23.1002 85.0934 12.2959 92.6751C6.89006 96.4686 3.22234 100.768 1.52434 105.432C-0.17847 110.109 0.119332 115.099 2.54892 120.215L3.45221 119.785Z" fill="#242424"/>
+                  </svg>
+            </div>
+        </div>
+    </div>
+    <div class="block_subscribe2">
+        <div class="wrapper_subscribe">
+            <p class="subtitle_subscribe2">Будь в курсі життя студії та останніх подій</p>
+            <p class="subtitle_subscribe">Підпишись на наш Instagram</p>
+            <button class="pulse">Підписатись
+                
+            </button>
+        </div>
+    </div>
+    <div id="services" class="block_3">
+        <h2>Напрямки</h2>
+        <p class="subtitle">Відкрий безмежний світ танцю та перетвори його на незабутню подорож!</p>
+        <div class="block3_list_direction">
+            <nav class="list">
+                <ul>
+                    <li><a href="#" onclick="showDescription('poleDance')">Pole Dance</a></li>
+                    <li><a href="#" onclick="showDescription('poleKids')">Pole Kids</a></li>
+                    <li><a href="#" onclick="showDescription('exoticPoleDance')">Exotic Pole Dance</a></li>
+                    <li><a href="#" onclick="showDescription('stripPlastic')">Strip Plastic</a></li>
+                    <li><a href="#" onclick="showDescription('stretching')">Stretching</a></li>
+                    <li><a href="#" onclick="showDescription('highHeels')">High Heels</a></li>
+                </ul>
+            </nav>
+            <div>
+                <div class="block3_direction" id="poleDanceDescription">
+                    <div class="direction_info">
+                        <p class="block_title">Pole Dance</p>
+                        <p class="main_text">Танцювальне мистецтво, яке  поєднує в собі акробатику, танець  та спортивну гімнастику на пілоні.</p>
+                        <p class="main_text">Під час заняття активно працюють  м’язи рук і плечовий пояс, прес і м’язи спини та сідниці.</p>
+                        <p class="main_text">Поєднує в собі кардіо навантаження, силовий тренінг і вправи на розтяжку.</p>
+                        <p class="main_text">Тренування можна починати незалежно від рівня фізичної підготовки та віку.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+                <div class="block3_direction" id="poleKidsDescription">
+                    <div class="direction_info">
+                        <p class="block_title">Pole Kids</p>
+                        <p class="main_text">Програма спрямована на розвиток гнучкості, координації та фізичної сили.</p>
+                        <p class="main_text">Учні вивчають базові рухи та техніки на пілоні, що сприяє формуванню їхнього тіла та покращує самопочуття.</p>
+                        <p class="main_text">Pole Dance Kids надає дітям можливість виражати себе та насолоджуватися фізичною активністю веселим та креативним способом.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+                <div class="block3_direction" id="exoticPoleDanceDescription">
+                    <div class="direction_info">
+                        <p class="block_title">Exotic Pole Dance</p>
+                        <p class="main_text">Сучасний напрямок Pole dance, що поєднує в собі хореографію та розвиток акторських здібностей.</p>
+                        <p class="main_text">Цей напрямок розвиває граціозність та сексуальність рухів на пілоні. </p>
+                        <p class="main_text">Exotic Pole Dance дозволяє виразити індивідуальність танцівника через ритмічні та елегантні рухи.</p>
+                        <p class="main_text">Цей напрямок також сприяє розвитку гнучкості та сили, надаючи тілу гармонійність та естетичний вигляд.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+                <div class="block3_direction" id="stripPlasticDescription">
+                    <div class="direction_info">
+                        <p class="block_title">Strip Plastic</p>
+                        <p class="main_text">Це танцювальний напрямок, який об'єднує в собі елементи гнучкого та пластичного руху.</p>
+                        <p class="main_text">Цей стиль дозволяє танцюристам виражати свою індивідуальність через елегантні рухи, розвиваючи при цьому гнучкість і силу тіла.</p>
+                        <p class="main_text">Цей танцювальний напрямок сприяє не лише фізичному розвитку, а й вираженню сексапільності та танцювальної експресії.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+                <div class="block3_direction" id="stretchingDescription">
+                    <div class="direction_info">
+                        <p class="block_title">Stretching</p>
+                        <p class="main_text">Це не просто техніка, але і фізична практика, яка орієнтована на розвиток гнучкості, покращення координації тіла та підвищення обсягу рухів.</p>
+                        <p class="main_text">Цей напрямок сприяє підтримці правильного положення тіла та зменшенню ризику травм.</p>
+                        <p class="main_text">Stretching також може допомагати зняти напругу та покращити емоційний стан.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+                <div class="block3_direction" id="highHeelsDescription">
+                    <div class="direction_info">
+                        <p class="block_title">High Heels</p>
+                        <p class="main_text">Танцювальний стиль, який виокремлюється своєю специфічною хореографією та використанням високих підборів.</p>
+                        <p class="main_text">Дівчата навчаються техніці та стильові, що підкреслюють жіночність та грацію в образі, використовуючи виразні рухи та танцювальні комбінації.</p>
+                        <p class="main_text">High Heels викликає захоплення своєю енергією та сприяє розвитку гнучкості, силових властивостей та мистецтва  танцювання.</p>
+                    </div>
+                    <div class="direction_image_button">
+                        <img class="direction_image" src="./image/image1_direction.png">
+                        <button class="pink_button">Записатись</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="marquee_container">
+        <div class="marquee">
+            ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я.КРАСА.
+        </div>
+    </div>
+    <div id="schedule" class="block_4">
+        <h2>Розклад</h2>
+        <div class="shedule">
+            <div class="days">
+                <div class="shedule_part_monday">
+                    <span class="shedule_days_text">Понеділок / Середа / Пʼятниця</span>
+                    <svg class="shedule_line_monday" xmlns="http://www.w3.org/2000/svg" width="2" height="561" viewBox="0 0 2 561" fill="none">
+                        <path d="M1 1L0.999976 560" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="shedule_time_class">
+                    <div class="shedule_part2">
+                        <span class="shedule_time">10:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">11:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">11:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">12:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic pd (пт pole dance)</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">12:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">16:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole kids</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">17:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Junior</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">18:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">18:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Heels</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">19:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic pd</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">19:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">20:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic base</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">20:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                </div>
+            </div>
+            <div class="days">
+                <div class="shedule_part_tuesday">
+                    <span class="shedule_days_text">Вівторок/Четвер</span>
+                    <svg class="shedule_line_tuesday" xmlns="http://www.w3.org/2000/svg" width="2" height="461" viewBox="0 0 2 461" fill="none">
+                        <path d="M1 1L0.99998 460" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="shedule_time_class">
+                    <div class="shedule_part2">
+                        <span class="shedule_time">11:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">12:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic pd</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">13:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic base</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">16:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole kids</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">17:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Junior</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">17:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">18:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">18:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">19:00</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">19:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">20:15</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="days">
+                <div class="shedule_part_saturday">
+                    <span class="shedule_days_text">Субота</span>
+                    <svg class="shedule_line_saturday" xmlns="http://www.w3.org/2000/svg" width="2" height="371" viewBox="0 0 2 371" fill="none">
+                        <path d="M1 1L0.999984 370" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                </div>
+                <div class="shedule_time_class">
+                    <div class="shedule_part2">
+                        <span class="shedule_time">10:00</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">10:30</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">11:30</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">11:30</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">12:30</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole kids</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">12:30</span>
+                        <svg class="pink_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <circle cx="5" cy="5" r="5" fill="#FF82AD"/>
+                        </svg>
+                        <span class="shedule_classname">Stretching</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">13:30</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Pole Dance</span>
+                    </div>
+                    <div class="shedule_part2">
+                        <span class="shedule_time">14:30</span>
+                        <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+                            <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
+                        </svg>
+                        <span class="shedule_classname">Exotic base</span>
+                    </div>                                      
+                </div>
+            </div>
+        </div>
+        <div class="shedule_halls">
+            <div class="shedule_polehall">
+                <svg class="shedule_halls_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                    <circle cx="10" cy="10.5" r="10" fill="#054A4C"/>
+                </svg>
+                <p class="main_text">Зал з пілонами</p>     
+           </div>
+           <div class="shedule_polehall">
+                <svg class="shedule_halls_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <circle cx="10" cy="10.5" r="10" fill="#FF82AD"/>
+                </svg>
+                <p class="main_text">Зал Pink</p> 
+           </div>
+           <svg class="line_subscribe" xmlns="http://www.w3.org/2000/svg" width="442" height="75" viewBox="0 0 442 75" fill="none">
+                <path d="M0.607631 18.0125C0.337963 17.953 0.0711654 18.1235 0.0117231 18.3931C-0.0477192 18.6628 0.122703 18.9296 0.392372 18.989L0.607631 18.0125ZM366.5 10L366.952 9.78549L366.5 10ZM441.87 70.8373C442.056 70.6331 442.041 70.3169 441.837 70.131L438.509 67.1018C438.305 66.9159 437.988 66.9307 437.803 67.1349C437.617 67.3391 437.631 67.6554 437.836 67.8413L440.794 70.5339L438.101 73.4919C437.915 73.6961 437.93 74.0123 438.134 74.1982C438.338 74.3841 438.655 74.3693 438.841 74.1651L441.87 70.8373ZM0.392372 18.989C43.5115 28.4937 138.625 33.8717 221.146 33.1258C262.412 32.7528 300.558 30.8484 327.506 27.157C340.971 25.3124 351.679 23.0168 358.586 20.2259C362.032 18.8336 364.594 17.2943 366.065 15.5761C366.807 14.7101 367.284 13.7842 367.443 12.7989C367.602 11.8103 367.434 10.8018 366.952 9.78549L366.048 10.2145C366.457 11.0743 366.578 11.8784 366.455 12.6398C366.332 13.4044 365.956 14.1659 365.306 14.9256C363.993 16.4589 361.612 17.9247 358.212 19.2988C351.426 22.0408 340.82 24.3238 327.37 26.1663C300.485 29.8491 262.388 31.753 221.137 32.1259C138.624 32.8716 43.608 27.4909 0.607631 18.0125L0.392372 18.989ZM366.952 9.78549C364.519 4.66267 360.965 1.86627 356.946 0.958727C352.946 0.0555124 348.568 1.04168 344.495 3.31113C336.36 7.84416 329.252 17.5994 328.491 28.3799C327.726 39.2209 333.38 50.9746 350.525 59.4481C367.639 67.9067 396.241 73.1267 441.523 71.0002L441.477 70.0013C396.259 72.1247 367.858 66.8996 350.968 58.5517C334.108 50.2187 328.757 38.8045 329.489 28.4503C330.224 18.0355 337.115 8.56798 344.982 4.18469C348.91 1.99599 353.034 1.10059 356.726 1.93417C360.398 2.76341 363.725 5.32213 366.048 10.2145L366.952 9.78549Z" fill="#242424"/>
+            </svg>
+            <button class="pink_button">Записатись</button>
+        </div>
+    </div>
+
+    <div id="prices" class="block_5">
+        <h2>Ціни</h2>
+        <div class="sticker_2">
+            <p class="subcribe_text1" >Перше пробне відвідування</p>
+            <p class="subcribe_text2">150 грн</p>
+        </div>
+        <div class="block_direction_price">
+            <nav class="list">
+                <ul>
+                    <li><a href="#">Дорослі</a></li>
+                    <li><a href="#">Дитячі</a></li>
+                    <li><a href="#">Індивідуальні заняття</a></li>
+                    <li><a href="#">Оренда залів</a></li>
+                </ul>
+            </nav>
+            <div class="block_price">
+                <div class="price_section">
+                    <div class="price_general">
+                        <p class="price_text_class">1 заняття</p>
+                        <p class="price_text_price">200грн</p>
+                        <button class="black_button">
+                            Купити
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M22.75 13L17.0625 7.3125L15.9136 8.46137L19.6397 12.1875L3.25 12.1875L3.25 13.8125L19.6397 13.8125L15.9136 17.5386L17.0625 18.6875L22.75 13Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="price_section">
+                    <div class="price_general">
+                        <p class="price_text_class">4 заняття</p>
+                        <p class="price_text_price">700грн</p>
+                        <button class="black_button">
+                            Купити
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M22.75 13L17.0625 7.3125L15.9136 8.46137L19.6397 12.1875L3.25 12.1875L3.25 13.8125L19.6397 13.8125L15.9136 17.5386L17.0625 18.6875L22.75 13Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="price_section">
+                    <div class="price_general">
+                        <p class="price_text_class">8 занять</p>
+                        <p class="price_text_price">1280грн</p>
+                        <button class="black_button">
+                            Купити
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M22.75 13L17.0625 7.3125L15.9136 8.46137L19.6397 12.1875L3.25 12.1875L3.25 13.8125L19.6397 13.8125L15.9136 17.5386L17.0625 18.6875L22.75 13Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="price_section">
+                    <div class="price_general">
+                        <p class="price_text_class">16 занять</p>
+                        <p class="price_text_price">1690грн</p>
+                        <button class="black_button">
+                            Купити
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M22.75 13L17.0625 7.3125L15.9136 8.46137L19.6397 12.1875L3.25 12.1875L3.25 13.8125L19.6397 13.8125L15.9136 17.5386L17.0625 18.6875L22.75 13Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="price_section">
+                    <div class="price_general">
+                        <p class="price_text_class">30 занять</p>
+                        <p class="price_text_price">2990грн</p>
+                        <button class="black_button">
+                            Купити
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M22.75 13L17.0625 7.3125L15.9136 8.46137L19.6397 12.1875L3.25 12.1875L3.25 13.8125L19.6397 13.8125L15.9136 17.5386L17.0625 18.6875L22.75 13Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="block_5_description">
+            <div class="description_section">
+                <p class="subtitle_block5_description">Абонемент дійсний</p>
+                <span class="pink_text_subtitle">31 календарний день</span>
+            </div>
+            <div class="description_section">
+                <p class="subtitle_block5_description">Активація абонементу починається </p>
+                <span class="pink_text_subtitle">з першого відвідування</span>
+            </div>
+            <div class="description_section">
+                <p class="subtitle_block5_description">Тривалість тренування</p>
+                <span class="pink_text_subtitle">1 година</span>
+            </div>
+        </div>
+    </div>
+    <div class="marquee_container">
+        <div class="marquee">
+            ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я.КРАСА.
+        </div>
+    </div>
+    <div class="block_6">
+        <h2>Наша команда</h2>
+        <p class="subtitle_block_6">Наші викладачі - професіонали з багаторічним досвідом та розуміють, що кожен учень унікальний. 
+            Тому, вони допоможуть вам розвивати ваш потенціал та досягати поставлених цілей.</p>
+        <div class="slider" id="slider">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                    
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_2.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_3.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_4.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="member_foto" src="./image/member_1.png">
+                    <div class="member_description">
+                        <p class="member_name">Надя Коробкова</p>
+                        <p class="member_name">Exotic Pole Dance</p>
+                    </div>
+                </div>             
+            </div>
+        </div>
+        <div class="slider_button">
+            <button id="prevButton" class="prevButton">Назад</button>
+            <button id="nextButton" class="nextButton">Вперед</button>
+        </div>
+    </div>
+    <div class="gallery">
+        <h2>Галерея</h2>
+        <p class="subtitle">Ми ростемо разом з вами і завдяки вам! 
+            А ваші досягнення та довіра - це найкраща мотивація!</p>
+        <div class="photo-grid">
+            <img class="gallery_img" src="./image/gallery_image1.png">
+            <img class="gallery_img" src="./image/gallery_image2.png">
+            <img class="gallery_img" src="./image/gallery_image3.png">
+            <img class="gallery_img" src="./image/gallery_image4.png">
+            <img class="gallery_img" src="./image/gallery_image5.png">
+            <img class="gallery_img" src="./image/gallery_image6.png">
+        </div>
+        <div class="gallery_button">
+            <button class="showMoreButton" id="showMoreButton">
+                <svg class="footer_button_icon" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+                    <g clip-path="url(#clip0_1414_1351)">
+                    <path d="M15.5 0C11.2869 0 10.7619 0.0203438 9.11305 0.0900937C7.45745 0.171469 6.33758 0.428187 5.34945 0.811812C4.31528 1.20224 3.37869 1.81352 2.60498 2.60303C1.81327 3.37493 1.20165 4.31203 0.813766 5.3475C0.430141 6.33562 0.173422 7.4555 0.0920469 9.11109C0.0174531 10.7609 0.00195312 11.285 0.00195312 15.4981C0.00195312 19.7112 0.0222969 20.2362 0.0920469 21.885C0.173422 23.5358 0.430141 24.6605 0.813766 25.6486C1.20419 26.6828 1.81547 27.6194 2.60498 28.3931C3.37688 29.1848 4.31399 29.7964 5.34945 30.1843C6.33758 30.5631 7.4623 30.8247 9.11305 30.906C10.7628 30.9806 11.2869 30.9961 15.5 30.9961C19.7131 30.9961 20.2382 30.9758 21.887 30.906C23.5377 30.8247 24.6625 30.5621 25.6506 30.1843C26.6848 29.7939 27.6213 29.1826 28.395 28.3931C29.1878 27.622 29.7996 26.6847 30.1863 25.6486C30.565 24.6605 30.8266 23.5358 30.908 21.885C30.9826 20.2352 30.9981 19.7112 30.9981 15.4981C30.9981 11.285 30.9777 10.7599 30.908 9.11109C30.8266 7.46034 30.5641 6.32981 30.1863 5.3475C29.7958 4.31332 29.1846 3.37674 28.395 2.60303C27.624 1.81029 26.6866 1.19852 25.6506 0.811812C24.6625 0.428187 23.5377 0.171469 21.887 0.0900937C20.2372 0.0155 19.7131 0 15.5 0ZM15.5 2.79C19.6375 2.79 20.1316 2.81034 21.7669 2.88009C23.2752 2.95081 24.0967 3.20269 24.6421 3.41581C25.3164 3.66471 25.9267 4.06085 26.4285 4.57541C26.9422 5.07511 27.3368 5.68399 27.5832 6.35694C27.7964 6.90234 28.0482 7.72384 28.1189 9.23219C28.1887 10.8674 28.209 11.3625 28.209 15.499C28.209 19.6356 28.1887 20.1306 28.1131 21.7659C28.0318 23.2742 27.7799 24.0957 27.5677 24.6411C27.2742 25.3687 26.9468 25.8772 26.4062 26.4275C25.9027 26.9388 25.2928 27.3331 24.6198 27.5822C24.0812 27.7954 23.2481 28.0472 21.7339 28.118C20.09 28.1877 19.6056 28.2081 15.4574 28.2081C11.3092 28.2081 10.8258 28.1877 9.17989 28.1122C7.67155 28.0308 6.83939 27.7789 6.29398 27.5667C5.55773 27.2732 5.05302 26.9458 4.51245 26.4052C3.96705 25.8598 3.62023 25.3406 3.35286 24.6188C3.13586 24.0802 2.88786 23.2471 2.80745 21.7329C2.75223 20.1083 2.72608 19.6046 2.72608 15.4758C2.72608 11.3489 2.75223 10.8442 2.80745 9.19925C2.88786 7.68509 3.13586 6.85391 3.35286 6.31334C3.62023 5.57612 3.96802 5.07237 4.51245 4.52697C5.05205 3.98737 5.55773 3.63862 6.29398 3.36544C6.83939 3.15328 7.6512 2.90141 9.16536 2.82584C10.8093 2.76675 11.2937 2.74544 15.4361 2.74544L15.5 2.79ZM15.5 7.54366C14.4551 7.54327 13.4203 7.74881 12.4548 8.14852C11.4893 8.54823 10.6121 9.13427 9.87318 9.87316C9.13429 10.6121 8.54824 11.4893 8.14853 12.4548C7.74883 13.4203 7.54329 14.455 7.54367 15.5C7.54329 16.5449 7.74883 17.5797 8.14853 18.5452C8.54824 19.5107 9.13429 20.3879 9.87318 21.1268C10.6121 21.8657 11.4893 22.4518 12.4548 22.8515C13.4203 23.2512 14.4551 23.4567 15.5 23.4563C16.545 23.4567 17.5797 23.2512 18.5452 22.8515C19.5107 22.4518 20.388 21.8657 21.1269 21.1268C21.8657 20.3879 22.4518 19.5107 22.8515 18.5452C23.2512 17.5797 23.4567 16.5449 23.4564 15.5C23.4567 14.455 23.2512 13.4203 22.8515 12.4548C22.4518 11.4893 21.8657 10.6121 21.1269 9.87316C20.388 9.13427 19.5107 8.54823 18.5452 8.14852C17.5797 7.74881 16.545 7.54327 15.5 7.54366ZM15.5 20.6663C12.6441 20.6663 10.3337 18.3559 10.3337 15.5C10.3337 12.6441 12.6441 10.3337 15.5 10.3337C18.3559 10.3337 20.6664 12.6441 20.6664 15.5C20.6664 18.3559 18.3559 20.6663 15.5 20.6663ZM25.637 7.22591C25.6365 7.71964 25.44 8.19298 25.0907 8.54193C24.7414 8.89087 24.2678 9.08687 23.7741 9.08687C23.53 9.08687 23.2882 9.03879 23.0627 8.94536C22.8371 8.85194 22.6322 8.715 22.4596 8.54238C22.2869 8.36975 22.15 8.16481 22.0566 7.93926C21.9632 7.71372 21.9151 7.47197 21.9151 7.22784C21.9151 6.98371 21.9632 6.74197 22.0566 6.51642C22.15 6.29087 22.2869 6.08594 22.4596 5.91331C22.6322 5.74068 22.8371 5.60375 23.0627 5.51032C23.2882 5.4169 23.53 5.36881 23.7741 5.36881C24.7981 5.36881 25.637 6.20194 25.637 7.22591Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1414_1351">
+                        <rect width="31" height="31" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+                Переглянути більше
+            </button>
+        </div>
+    </div>
+    <div class="form_block">
+        <h2>Зворотній звʼязок</h2>
+        <div class="form_section">
+            <div class="form_text">
+                <p class="form_text_1">Наша студія - це не просто місце, де ви вивчаєте <span class="pink_text_subtitle">танці</span>. Це місце, де ви дізнаєтеся про себе більше, ніж ви коли-небудь могли собі уявити.</p>
+                <p class="form_text_1">Тут ми вчимо мистецтву <span class="pink_text_subtitle">вираження себе</span> та відкриттю свого внутрішнього <span class="pink_text_subtitle">палаючого вогню</span>.</p>   
+                <p class="form_text_1">Якщо у вас виникли запитання або вам потрібна допомога, не соромтеся звертатися до нас у Telegram. Ми завжди готові допомогти та відповісти на ваші питання.</p>
+                <svg class="form_image" xmlns="http://www.w3.org/2000/svg" width="424" height="113" viewBox="0 0 424 113" fill="none">
+                    <path d="M1.16131 76.3885C0.899929 76.2995 0.615823 76.4391 0.526739 76.7005C0.437655 76.9619 0.577327 77.246 0.838705 77.3351L1.16131 76.3885ZM321.5 15.0005L321.978 14.8537L321.5 15.0005ZM423.878 109.327C424.059 109.118 424.036 108.802 423.827 108.622L420.423 105.679C420.214 105.498 419.898 105.521 419.718 105.73C419.537 105.939 419.56 106.254 419.769 106.435L422.795 109.051L420.179 112.077C419.998 112.286 420.021 112.602 420.23 112.782C420.439 112.963 420.754 112.94 420.935 112.731L423.878 109.327ZM0.838705 77.3351C22.4533 84.7019 54.2117 87.4035 89.4261 86.6056C124.653 85.8073 163.388 81.5055 198.983 74.8347C234.573 68.165 267.051 59.122 289.754 48.8302C301.1 43.6865 310.043 38.214 315.708 32.5417C321.375 26.8672 323.837 20.9065 321.978 14.8537L321.022 15.1474C322.727 20.6981 320.538 26.2904 315 31.8351C309.461 37.382 300.645 42.7949 289.341 47.9195C266.742 58.1642 234.352 67.1891 198.799 73.8519C163.252 80.5136 124.571 84.8089 89.4034 85.6058C54.2226 86.403 22.6064 83.6976 1.16131 76.3885L0.838705 77.3351ZM321.978 14.8537C319.593 7.08842 316.518 2.75841 313.193 1.33487C309.777 -0.127494 306.358 1.55331 303.565 5.09475C300.764 8.64645 298.467 14.1941 297.196 20.8942C295.924 27.6026 295.674 35.5009 296.996 43.7794C299.642 60.3431 308.587 78.4407 328.25 91.5625C347.905 104.679 378.216 112.789 423.536 109.499L423.464 108.501C378.284 111.782 348.217 103.685 328.805 90.7307C309.401 77.7813 300.591 59.9434 297.984 43.6217C296.679 35.4575 296.928 27.6755 298.179 21.0805C299.431 14.4771 301.681 9.098 304.35 5.71401C307.027 2.31975 310 1.05589 312.799 2.25416C315.689 3.49124 318.651 7.42717 321.022 15.1474L321.978 14.8537Z" fill="#242424"/>
+                </svg>
+            </div>
+            <div class="form-container">
+                <button class="Telegram">Telegram</button>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="contacts_block">
+        <h2>Контакти</h2>
+        <div class="contact_sections">
+            <div class="contacts_text">
+                <div class="contact_text_section">
+                    <p class="contact_pinksubtitle">Робочі години</p>
+                    <p class="contact_maintext">ПН - ПТ: 9:30 - 21:00</p>
+                    <p class="contact_maintext">СБ - НД: 9:30 - 16:00</p>
+                </div>
+                <div class="contact_text_section">
+                    <p class="contact_pinksubtitle">Наша Адреса</p>
+                    <p class="contact_maintext">м. Київ,</p>
+                    <p class="contact_maintext">бул. Кольцова 14у</p>
+                </div>
+                <div class="contact_text_section">
+                    <p class="contact_pinksubtitle">Контакти</p>
+                    <p class="contact_maintext">+3 (067) 123 12 12</p>
+                </div>
+                <div class="contact_text_icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M34.7426 5.47485C28.188 4.00969 21.3909 4.00969 14.8363 5.47485L14.1301 5.6311C12.2864 6.04331 10.593 6.95857 9.23814 8.2752C7.88327 9.59182 6.91991 11.2583 6.45508 13.0894C4.79362 19.6364 4.79362 26.4946 6.45508 33.0415C6.89837 34.7879 7.79551 36.386 9.05557 37.6739C10.3156 38.9618 11.8938 39.8936 13.6301 40.3749L14.5988 46.1582C14.6298 46.3418 14.7093 46.5138 14.8293 46.6563C14.9493 46.7987 15.1053 46.9064 15.281 46.9681C15.4567 47.0298 15.6457 47.0432 15.8284 47.007C16.0111 46.9709 16.1807 46.8864 16.3197 46.7624L22.0093 41.6728C26.2803 41.9334 30.5667 41.5919 34.7426 40.6582L35.4509 40.5019C37.2946 40.0897 38.988 39.1745 40.3429 37.8578C41.6977 36.5412 42.6611 34.8748 43.1259 33.0436C44.7872 26.4967 44.7872 19.6385 43.1259 13.0915C42.6609 11.2601 41.6973 9.59346 40.342 8.27681C38.9867 6.96015 37.2929 6.04505 35.4488 5.63318L34.7426 5.47485ZM16.5947 12.9207C16.2075 12.8643 15.8127 12.9423 15.4759 13.1415H15.4468C14.6655 13.5999 13.9613 14.1769 13.3613 14.8561C12.8613 15.4332 12.5905 16.0165 12.5197 16.579C12.478 16.9124 12.5072 17.2499 12.6051 17.5686L12.6426 17.5894C13.2051 19.2415 13.9384 20.8311 14.8343 22.3269C15.9894 24.428 17.4108 26.3711 19.0634 28.1082L19.1134 28.179L19.1926 28.2374L19.2405 28.2936L19.2988 28.3436C21.042 30.0012 22.9897 31.4294 25.0947 32.5936C27.5009 33.904 28.9613 34.5228 29.8384 34.7811V34.7936C30.0947 34.8728 30.328 34.9082 30.5634 34.9082C31.3104 34.853 32.0174 34.5494 32.5718 34.0457C33.2488 33.4457 33.8218 32.7394 34.2676 31.954V31.9394C34.6863 31.1478 34.5447 30.4019 33.9405 29.8957C32.7269 28.8353 31.4147 27.8935 30.0217 27.0832C29.0884 26.5769 28.1405 26.8832 27.7572 27.3957L26.9384 28.429C26.5176 28.9415 25.7551 28.8707 25.7551 28.8707L25.7343 28.8832C20.0447 27.4311 18.5259 21.6707 18.5259 21.6707C18.5259 21.6707 18.4551 20.8874 18.9822 20.4874L20.0072 19.6624C20.4988 19.2624 20.8405 18.3165 20.3134 17.3832C19.5084 15.9889 18.5685 14.6771 17.5072 13.4665C17.2757 13.1816 16.9511 12.9876 16.5905 12.9186L16.5947 12.9207ZM26.2072 10.4165C25.9309 10.4165 25.6659 10.5263 25.4706 10.7216C25.2752 10.917 25.1655 11.1819 25.1655 11.4582C25.1655 11.7345 25.2752 11.9994 25.4706 12.1948C25.6659 12.3901 25.9309 12.4999 26.2072 12.4999C28.8426 12.4999 31.0301 13.3603 32.7613 15.0103C33.6509 15.9124 34.3447 16.9811 34.7988 18.1519C35.2551 19.3249 35.4634 20.5769 35.4093 21.8311C35.4035 21.9679 35.4248 22.1045 35.4718 22.2331C35.5188 22.3616 35.5907 22.4797 35.6834 22.5805C35.8706 22.784 36.1309 22.9049 36.4072 22.9165C36.6834 22.9281 36.953 22.8295 37.1565 22.6424C37.3601 22.4552 37.481 22.1949 37.4926 21.9186C37.5572 20.3759 37.3011 18.8365 36.7405 17.3978C36.1775 15.9522 35.3237 14.6376 34.2322 13.5353L34.2113 13.5144C32.0634 11.4624 29.3447 10.4165 26.2072 10.4165ZM26.1363 13.8415C25.8601 13.8415 25.5951 13.9513 25.3998 14.1466C25.2044 14.342 25.0947 14.6069 25.0947 14.8832C25.0947 15.1595 25.2044 15.4244 25.3998 15.6198C25.5951 15.8151 25.8601 15.9249 26.1363 15.9249H26.1718C28.0718 16.0603 29.4551 16.6936 30.4238 17.7332C31.4176 18.804 31.9322 20.1353 31.8926 21.7811C31.8862 22.0574 31.9899 22.3248 32.1807 22.5247C32.3716 22.7245 32.634 22.8404 32.9103 22.8467C33.1866 22.8531 33.454 22.7494 33.6539 22.5586C33.8537 22.3677 33.9696 22.1053 33.9759 21.829C34.0259 19.6686 33.3301 17.804 31.9509 16.3165V16.3124C30.5405 14.7999 28.6051 13.9999 26.2759 13.8436L26.2405 13.8394L26.1363 13.8415ZM26.0968 17.3311C25.9573 17.3188 25.8169 17.3347 25.6838 17.3779C25.5507 17.4211 25.4276 17.4906 25.322 17.5824C25.2163 17.6742 25.1303 17.7864 25.0689 17.9121C25.0076 18.0379 24.9722 18.1748 24.9649 18.3145C24.9577 18.4543 24.9786 18.5941 25.0265 18.7256C25.0745 18.857 25.1484 18.9775 25.244 19.0798C25.3395 19.1821 25.4546 19.264 25.5825 19.3208C25.7105 19.3776 25.8485 19.408 25.9884 19.4103C26.8593 19.4561 27.4155 19.7186 27.7655 20.0707C28.1176 20.4249 28.3801 20.9936 28.428 21.8832C28.4306 22.023 28.4613 22.1608 28.5183 22.2885C28.5753 22.4161 28.6574 22.531 28.7598 22.6263C28.8621 22.7216 28.9826 22.7952 29.114 22.8429C29.2454 22.8907 29.3851 22.9114 29.5247 22.904C29.6643 22.8966 29.801 22.8612 29.9267 22.7998C30.0523 22.7384 30.1643 22.6524 30.256 22.5468C30.3476 22.4413 30.4171 22.3183 30.4603 22.1853C30.5034 22.0524 30.5194 21.912 30.5072 21.7728C30.4405 20.5228 30.0488 19.4186 29.2467 18.6061C28.4405 17.7936 27.3426 17.3978 26.0968 17.3311Z" fill="#242424"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <path d="M27.1422 4.16858C28.6625 4.16275 30.1828 4.17802 31.7026 4.21441L32.1068 4.229C32.5735 4.24566 33.0339 4.2665 33.5901 4.2915C35.8068 4.39566 37.3193 4.74566 38.6464 5.26025C40.0214 5.78941 41.1797 6.50608 42.3381 7.66441C43.3972 8.70526 44.2169 9.9643 44.7401 11.354C45.2547 12.6811 45.6047 14.1957 45.7089 16.4123C45.7339 16.9665 45.7547 17.429 45.7714 17.8957L45.7839 18.2998C45.8209 19.819 45.8369 21.3386 45.8318 22.8582L45.8339 24.4123V27.1415C45.839 28.6618 45.823 30.1821 45.786 31.7019L45.7735 32.1061C45.7568 32.5728 45.736 33.0332 45.711 33.5894C45.6068 35.8061 45.2526 37.3186 44.7401 38.6457C44.2186 40.0368 43.3987 41.2969 42.3381 42.3373C41.2963 43.3963 40.0366 44.216 38.6464 44.7394C37.3193 45.254 35.8068 45.604 33.5901 45.7082C33.0339 45.7332 32.5735 45.754 32.1068 45.7707L31.7026 45.7832C30.1828 45.8202 28.6625 45.8362 27.1422 45.8311L25.5881 45.8332H22.861C21.3407 45.8383 19.8204 45.8223 18.3006 45.7853L17.8964 45.7728C17.4018 45.7548 16.9074 45.734 16.4131 45.7103C14.1964 45.6061 12.6839 45.2519 11.3547 44.7394C9.96448 44.2172 8.70521 43.3974 7.66513 42.3373C6.60481 41.2963 5.78435 40.0364 5.26097 38.6457C4.74638 37.3186 4.39638 35.8061 4.29222 33.5894C4.26902 33.0951 4.24818 32.6006 4.22972 32.1061L4.2193 31.7019C4.18089 30.1821 4.16353 28.6618 4.16722 27.1415V22.8582C4.1614 21.3386 4.17668 19.819 4.21305 18.2998L4.22763 17.8957C4.2443 17.429 4.26513 16.9665 4.29013 16.4123C4.3943 14.1936 4.7443 12.6832 5.25888 11.354C5.78258 9.96362 6.60464 8.70492 7.66722 7.6665C8.70658 6.60556 9.96505 5.78436 11.3547 5.26025C12.6839 4.74566 14.1943 4.39566 16.4131 4.2915L17.8964 4.229L18.3006 4.21858C19.8197 4.18019 21.3393 4.16283 22.8589 4.1665L27.1422 4.16858ZM25.0006 14.5852C23.6204 14.5657 22.25 14.8207 20.9693 15.3354C19.6885 15.8501 18.5227 16.6142 17.5398 17.5833C16.5569 18.5524 15.7764 19.7072 15.2437 20.9806C14.7109 22.254 14.4366 23.6205 14.4366 25.0009C14.4366 26.3812 14.7109 27.7478 15.2437 29.0212C15.7764 30.2945 16.5569 31.4494 17.5398 32.4185C18.5227 33.3876 19.6885 34.1517 20.9693 34.6664C22.25 35.181 23.6204 35.436 25.0006 35.4165C27.7632 35.4165 30.4127 34.319 32.3662 32.3655C34.3198 30.412 35.4172 27.7625 35.4172 24.9998C35.4172 22.2372 34.3198 19.5876 32.3662 17.6341C30.4127 15.6806 27.7632 14.5852 25.0006 14.5852ZM25.0006 18.7519C25.8308 18.7366 26.6557 18.8869 27.4272 19.194C28.1987 19.5011 28.9013 19.9589 29.4938 20.5406C30.0864 21.1222 30.5572 21.8161 30.8786 22.5818C31.2 23.3474 31.3656 24.1695 31.3657 24.9998C31.3658 25.8302 31.2005 26.6522 30.8794 27.418C30.5582 28.1837 30.0877 28.8778 29.4953 29.4597C28.9029 30.0416 28.2005 30.4996 27.4291 30.8069C26.6578 31.1143 25.8329 31.2649 25.0026 31.2498C23.345 31.2498 21.7553 30.5914 20.5832 29.4193C19.4111 28.2472 18.7526 26.6574 18.7526 24.9998C18.7526 23.3422 19.4111 21.7525 20.5832 20.5804C21.7553 19.4083 23.345 18.7498 25.0026 18.7498L25.0006 18.7519ZM35.9381 11.4602C35.266 11.4871 34.6303 11.7731 34.1643 12.2581C33.6983 12.7431 33.438 13.3897 33.438 14.0623C33.438 14.735 33.6983 15.3815 34.1643 15.8666C34.6303 16.3516 35.266 16.6375 35.9381 16.6644C36.6287 16.6644 37.2911 16.39 37.7795 15.9017C38.2679 15.4133 38.5422 14.7509 38.5422 14.0602C38.5422 13.3696 38.2679 12.7072 37.7795 12.2188C37.2911 11.7304 36.6287 11.4561 35.9381 11.4561V11.4602Z" fill="#242424"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <path d="M24.9994 4.1665C13.4993 4.1665 4.16602 13.4998 4.16602 24.9998C4.16602 36.4998 13.4993 45.8332 24.9994 45.8332C36.4994 45.8332 45.8327 36.4998 45.8327 24.9998C45.8327 13.4998 36.4994 4.1665 24.9994 4.1665ZM34.666 18.3332C34.3535 21.6248 32.9994 29.6248 32.3119 33.3123C32.0202 34.8748 31.4369 35.3957 30.8952 35.4582C29.6869 35.5623 28.7702 34.6665 27.6035 33.8957C25.7702 32.6873 24.7285 31.9373 22.9577 30.7707C20.8952 29.4165 22.2285 28.6665 23.416 27.4582C23.7285 27.1457 29.0619 22.2915 29.166 21.854C29.1805 21.7877 29.1786 21.7189 29.1604 21.6536C29.1423 21.5882 29.1084 21.5283 29.0618 21.479C28.9368 21.3748 28.7702 21.4165 28.6243 21.4373C28.4368 21.479 25.5202 23.4165 19.8327 27.2498C18.9994 27.8123 18.2493 28.104 17.5827 28.0832C16.8327 28.0623 15.416 27.6665 14.3535 27.3123C13.041 26.8957 12.0202 26.6665 12.1035 25.9373C12.1452 25.5623 12.666 25.1873 13.6452 24.7915C19.7285 22.1457 23.7702 20.3957 25.791 19.5623C31.5827 17.1457 32.7702 16.729 33.5619 16.729C33.7285 16.729 34.1244 16.7707 34.3744 16.979C34.5827 17.1457 34.6452 17.3748 34.666 17.5415C34.6452 17.6665 34.6868 18.0415 34.666 18.3332Z" fill="#242424"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="contact_map_section">
+                <p class="subtitle">Знайдіть нас на мапі</p>
+                <div id="map" style="height: 500px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img class="image_logo" src="./image/logo_image.svg">
+        <nav class="footer_menu">
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#services">Напрямки</a></li>
+                <li><a href="#schedule">Розклад</a></li>
+                <li><a href="#prices">Ціни</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="footer_hours">
+            <p class="footer_maintext">Робочі години</p>
+            <p class="footer_maintext">ПН - ПТ: 9:30 - 21:00</p>
+            <p class="footer_maintext">СБ - НД: 9:30 - 16:00</p>
+        </div>
+        <div class="footer_text_section">
+            <p class="footer_maintext">Контакти</p>
+            <p class="footer_maintext">+3 (067) 123 12 12</p>
+            <button class="footer_button">
+                <svg class="footer_button_icon" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+                    <g clip-path="url(#clip0_1414_1351)">
+                      <path d="M15.5 0C11.2869 0 10.7619 0.0203438 9.11305 0.0900937C7.45745 0.171469 6.33758 0.428187 5.34945 0.811812C4.31528 1.20224 3.37869 1.81352 2.60498 2.60303C1.81327 3.37493 1.20165 4.31203 0.813766 5.3475C0.430141 6.33562 0.173422 7.4555 0.0920469 9.11109C0.0174531 10.7609 0.00195312 11.285 0.00195312 15.4981C0.00195312 19.7112 0.0222969 20.2362 0.0920469 21.885C0.173422 23.5358 0.430141 24.6605 0.813766 25.6486C1.20419 26.6828 1.81547 27.6194 2.60498 28.3931C3.37688 29.1848 4.31399 29.7964 5.34945 30.1843C6.33758 30.5631 7.4623 30.8247 9.11305 30.906C10.7628 30.9806 11.2869 30.9961 15.5 30.9961C19.7131 30.9961 20.2382 30.9758 21.887 30.906C23.5377 30.8247 24.6625 30.5621 25.6506 30.1843C26.6848 29.7939 27.6213 29.1826 28.395 28.3931C29.1878 27.622 29.7996 26.6847 30.1863 25.6486C30.565 24.6605 30.8266 23.5358 30.908 21.885C30.9826 20.2352 30.9981 19.7112 30.9981 15.4981C30.9981 11.285 30.9777 10.7599 30.908 9.11109C30.8266 7.46034 30.5641 6.32981 30.1863 5.3475C29.7958 4.31332 29.1846 3.37674 28.395 2.60303C27.624 1.81029 26.6866 1.19852 25.6506 0.811812C24.6625 0.428187 23.5377 0.171469 21.887 0.0900937C20.2372 0.0155 19.7131 0 15.5 0ZM15.5 2.79C19.6375 2.79 20.1316 2.81034 21.7669 2.88009C23.2752 2.95081 24.0967 3.20269 24.6421 3.41581C25.3164 3.66471 25.9267 4.06085 26.4285 4.57541C26.9422 5.07511 27.3368 5.68399 27.5832 6.35694C27.7964 6.90234 28.0482 7.72384 28.1189 9.23219C28.1887 10.8674 28.209 11.3625 28.209 15.499C28.209 19.6356 28.1887 20.1306 28.1131 21.7659C28.0318 23.2742 27.7799 24.0957 27.5677 24.6411C27.2742 25.3687 26.9468 25.8772 26.4062 26.4275C25.9027 26.9388 25.2928 27.3331 24.6198 27.5822C24.0812 27.7954 23.2481 28.0472 21.7339 28.118C20.09 28.1877 19.6056 28.2081 15.4574 28.2081C11.3092 28.2081 10.8258 28.1877 9.17989 28.1122C7.67155 28.0308 6.83939 27.7789 6.29398 27.5667C5.55773 27.2732 5.05302 26.9458 4.51245 26.4052C3.96705 25.8598 3.62023 25.3406 3.35286 24.6188C3.13586 24.0802 2.88786 23.2471 2.80745 21.7329C2.75223 20.1083 2.72608 19.6046 2.72608 15.4758C2.72608 11.3489 2.75223 10.8442 2.80745 9.19925C2.88786 7.68509 3.13586 6.85391 3.35286 6.31334C3.62023 5.57612 3.96802 5.07237 4.51245 4.52697C5.05205 3.98737 5.55773 3.63862 6.29398 3.36544C6.83939 3.15328 7.6512 2.90141 9.16536 2.82584C10.8093 2.76675 11.2937 2.74544 15.4361 2.74544L15.5 2.79ZM15.5 7.54366C14.4551 7.54327 13.4203 7.74881 12.4548 8.14852C11.4893 8.54823 10.6121 9.13427 9.87318 9.87316C9.13429 10.6121 8.54824 11.4893 8.14853 12.4548C7.74883 13.4203 7.54329 14.455 7.54367 15.5C7.54329 16.5449 7.74883 17.5797 8.14853 18.5452C8.54824 19.5107 9.13429 20.3879 9.87318 21.1268C10.6121 21.8657 11.4893 22.4518 12.4548 22.8515C13.4203 23.2512 14.4551 23.4567 15.5 23.4563C16.545 23.4567 17.5797 23.2512 18.5452 22.8515C19.5107 22.4518 20.388 21.8657 21.1269 21.1268C21.8657 20.3879 22.4518 19.5107 22.8515 18.5452C23.2512 17.5797 23.4567 16.5449 23.4564 15.5C23.4567 14.455 23.2512 13.4203 22.8515 12.4548C22.4518 11.4893 21.8657 10.6121 21.1269 9.87316C20.388 9.13427 19.5107 8.54823 18.5452 8.14852C17.5797 7.74881 16.545 7.54327 15.5 7.54366ZM15.5 20.6663C12.6441 20.6663 10.3337 18.3559 10.3337 15.5C10.3337 12.6441 12.6441 10.3337 15.5 10.3337C18.3559 10.3337 20.6664 12.6441 20.6664 15.5C20.6664 18.3559 18.3559 20.6663 15.5 20.6663ZM25.637 7.22591C25.6365 7.71964 25.44 8.19298 25.0907 8.54193C24.7414 8.89087 24.2678 9.08687 23.7741 9.08687C23.53 9.08687 23.2882 9.03879 23.0627 8.94536C22.8371 8.85194 22.6322 8.715 22.4596 8.54238C22.2869 8.36975 22.15 8.16481 22.0566 7.93926C21.9632 7.71372 21.9151 7.47197 21.9151 7.22784C21.9151 6.98371 21.9632 6.74197 22.0566 6.51642C22.15 6.29087 22.2869 6.08594 22.4596 5.91331C22.6322 5.74068 22.8371 5.60375 23.0627 5.51032C23.2882 5.4169 23.53 5.36881 23.7741 5.36881C24.7981 5.36881 25.637 6.20194 25.637 7.22591Z" fill="white"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1414_1351">
+                        <rect width="31" height="31" fill="white"/>
+                      </clipPath>
+                    </defs>
+                </svg>
+                Підписатись
+            </button>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/0584d798f1.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCdhEGcE86HjnqF60IilY9AsnTxhVSYxc&callback=initMap"
+    async
+    defer
+    ></script>
+    <script>
+        function initMap() {
+          const myLatLng = { lat: -25.363, lng: 131.044 }; // Замініть це значеннями вашої локації
+      
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: myLatLng,
+          });
+      
+          new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "Моя локація",
+          });
+        }
+      </script>
+      <script>
+  function onYouTubeIframeAPIReady() {
+    // Тут можна залишити порожнім
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
