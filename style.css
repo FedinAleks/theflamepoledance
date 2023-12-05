@@ -14,6 +14,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    margin-right: 5%;
 }
 .play_button {
     border-radius: 50%;
@@ -124,6 +125,9 @@ h1 {
     cursor: pointer;
 }
 
+.action_icons {
+    margin-right: 5%;
+}
 .main_list_icons {
     display: inline-flex;
     padding: 10px;
@@ -166,9 +170,12 @@ h1 {
 #menu {
     transition: 0.3s;
 }
-
+.spacer {
+    height: 160px; /* Висота вашого меню */
+    display: none; /* Початково ховаємо */
+}
 #menu.fixed-menu {
-    top: -4%;
+    top: -5%;
     position: fixed;
     padding-left: 5%;
     margin-left: -6%;
@@ -189,7 +196,7 @@ h1 {
 .block_subscribe {
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 15%;
+    margin-top: 14.6%;
     max-width: 100%;
     background: var(--Gradient, linear-gradient(90deg, #FCCB90 0%, #D57EEB 100%));
     background-size: 100%;
@@ -237,25 +244,26 @@ h1 {
     margin: 5%;
 }
 .wrapper_block2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 5%;
     justify-content: space-between;
     align-items: center;
 }
 .block2_part1 {
-    
+    width: 45%;
 }
 .block2_part1_image {
-    width: 590px;
-    height: 387px;
+    padding-top: 5%;
+    max-width: 590px;
+    max-height: 387px;
 }
 .block2_part2 {
-    
+    width: 40%;
 }
 .block2_part2_image {
-    width: 512px;
-    height: 489px;
+    max-width: 512px;
+    max-height: 489px;
+    padding-bottom: 5%;
 }
 .main_text {
     color: var(--Black, #242424);
@@ -319,7 +327,9 @@ h2 {
   animation: none;
 }
 
+
 .block_3 {
+    max-width: 100%;
     margin-left: 5%;
     margin-top: 3%;
     display: flex;
@@ -351,20 +361,20 @@ h2 {
 }
 .block3_direction {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: flex-start; /* Змінено на flex-start для вирішення проблеми зі зсувом вниз */
     background-color: #FFFFFF66;
     padding: 3%;
     gap: 5%;
     display: none;
-
+    flex-wrap: wrap; /* Додано wrap, щоб дозволити елементам переноситися на новий рядок при необхідності */
 }
-.block3_direction:first-child {
+.block3_direction:first-child { 
     display: block;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .block_title {
     font-size: 36px;
     font-weight: 600;
@@ -382,7 +392,7 @@ h2 {
     flex-wrap: wrap-reverse;
 }
 .direction_image {
-    margin-bottom: 15%;
+    margin-bottom: 10%;
 }
 
 
@@ -496,6 +506,7 @@ h2 {
     flex-direction: column;
     margin-left: 5%;
     margin-top: 3%;
+    max-height: 850px;
 }
 .sticker_2 {
     margin-top: 5%;
@@ -517,6 +528,7 @@ h2 {
 .block_price {
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
 }
 .price_section {
     width: 680px;
@@ -685,9 +697,10 @@ h2 {
 .form_section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .form_text {
-    max-width: 80%;
+    max-width: 60%;
 }
 .form_text_1 {
     color: var(--Black, #242424);
@@ -695,20 +708,60 @@ h2 {
     font-weight: 500;
     margin-bottom: 5%;
 }
+.form_svg {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+.pink_button_form {
+    border-radius: 5px;
+    background: var(--Pink, #E422C1);
+    border: none;
+    display: flex;
+    width: 387px;
+    height: 53px;
+    padding: 28px 59px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 155.687%;
+}
 
 
 
 
 .contacts_block {
-    margin-left: 5%;
+    margin: 5%;
 }
 .contact_sections {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.contacts_text {
+    width: 40%;
+}
+.contact_text_section {
+    padding: 2%;
+}
+.contact_pinksubtitle {
+    color: var(--Pink, #E422C1);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 7.2px;
+    text-transform: uppercase;
+}
+.contact_icons {
+    padding-right: 5%;
+}
+
+
 
 footer {
+    margin-top: 5%;
     max-width: 100%;
     display: flex;
     justify-content: space-around;

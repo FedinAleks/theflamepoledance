@@ -1,3 +1,70 @@
+// Slider price
+
+var prices = {
+  adults: [200, 700, 1280, 1690, 2990],
+  children: [185, 660, 1180, 1380],
+  individual: {
+      solo: 700,
+      duet: 850
+  },
+  rental: {
+      from300: 300
+  }
+};
+
+var currentCategory = 'adults';
+
+function changeCategory(category, event) {
+  currentCategory = category;
+  updatePrices();
+  if (event) {
+      event.preventDefault(); // Заблокує стандартну дію посилання
+      event.stopPropagation(); // Зупинить випливання подій
+  }
+}
+
+function updatePrices() {
+  var priceBlock = document.getElementById('priceBlock');
+  priceBlock.innerHTML = '';
+
+  if (currentCategory === 'individual') {
+      var soloSection = createPriceSection('Соло', prices.individual.solo);
+      var duetSection = createPriceSection('Дуєт', prices.individual.duet);
+      priceBlock.appendChild(soloSection);
+      priceBlock.appendChild(duetSection);
+  } else if (currentCategory === 'rental') {
+      var rentalSection = createPriceSection('Оренда залів', prices.rental.from300);
+      priceBlock.appendChild(rentalSection);
+  } else {
+      for (var i = 0; i < prices[currentCategory].length; i++) {
+          var priceSection = createPriceSection((i + 1) + ' заняття', prices[currentCategory][i]);
+          priceBlock.appendChild(priceSection);
+      }
+  }
+}
+
+function createPriceSection(classText, price) {
+  var priceSection = document.createElement('div');
+  priceSection.className = 'price_section';
+  priceSection.innerHTML = '<div class="price_general">' +
+      '<p class="price_text_class">' + classText + '</p>' +
+      '<p class="price_text_price">' + price + 'грн</p>' +
+      '<button class="black_button" onclick="order(' + price + ')">Замовити</button>' +
+      '</div>';
+  return priceSection;
+}
+
+function order(price) {
+  // Замініть цей URL на посилання на ваш Telegram-чат
+  var telegramChatUrl = 'https://t.me/theflamepoledance';
+  // Відкриття Telegram-чату в новому вікні
+  window.open(telegramChatUrl, '_blank');
+}
+
+updatePrices();
+
+
+// iframe playvideo
 function playVideo() {
   var iframe = document.getElementById('player');
   
@@ -52,16 +119,19 @@ function scrollToSchedule() {
 // Fixed Menu
 document.addEventListener("DOMContentLoaded", function () {
   var menu = document.getElementById('menu');
+  var spacer = document.querySelector('.spacer');
   var menuOffsetTop = menu.offsetTop;
 
   function handleScroll() {
       if (window.pageYOffset >= menuOffsetTop) {
           menu.classList.add('fixed-menu');
+          spacer.style.display = 'block';
           // Показати лого та кнопку при фіксації меню
           document.querySelector(".image_logo").style.display = "block";
           document.querySelector(".pink_button").style.display = "block";
       } else {
           menu.classList.remove('fixed-menu');
+          spacer.style.display = 'none';
           // Сховати лого та кнопку, коли меню не фіксується
           document.querySelector(".image_logo").style.display = "none";
           document.querySelector(".pink_button").style.display = "none";
@@ -120,15 +190,25 @@ showButtons();
 
 var currentDescription = document.querySelector('.block3_direction:first-child');
 
-function showDescription(descriptionId) {
-   // Ховаємо поточний блок опису
-  currentDescription.style.display = 'none';
+function showDescription(descriptionId, event) {
+    // Запобігаємо стандартній поведінці, яка прокручує сторінку вгору
+    event.preventDefault();
 
-  // Показуємо обраний блок опису
-  var selectedDescription = document.getElementById(descriptionId + 'Description');
-  if (selectedDescription) {
-    selectedDescription.style.display = 'block';
-    // Оновлюємо поточний блок опису
-    currentDescription = selectedDescription;
-  }
+    // Ховаємо поточний блок опису
+    currentDescription.style.display = 'none';
+
+    // Показуємо обраний блок опису
+    var selectedDescription = document.getElementById(descriptionId + 'Description');
+    if (selectedDescription) {
+        selectedDescription.style.display = 'flex';  // Змінено на flex
+        selectedDescription.style.alignItems = 'center'; 
+        // Оновлюємо поточний блок опису
+        currentDescription = selectedDescription;
+    }
 }
+
+// Приклад використання на HTML-елементі
+var directionLink = document.getElementById('directionLink');
+directionLink.addEventListener('click', function (event) {
+    showDescription('yourDescriptionId', event);
+});
