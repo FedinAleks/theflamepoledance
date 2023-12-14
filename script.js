@@ -1,3 +1,27 @@
+
+
+
+// map google
+function initMap() {
+  const myLatLng = { lat: -25.363, lng: 131.044 }; // Замініть це значеннями вашої локації
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: myLatLng,
+  });
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: "Моя локація",
+  });
+}
+function onYouTubeIframeAPIReady() {
+// Тут можна залишити порожнім
+}
+
+
+
 // Slider price
 
 var prices = {
@@ -64,22 +88,18 @@ function order(price) {
 updatePrices();
 
 
+
+
 // iframe playvideo
-function playVideo() {
-  var iframe = document.getElementById('player');
-  
-  // Замініть 'abcdefghijk' на ваш ID відео на YouTube
-  iframe.src = "https://www.youtube.com/embed/XnDz1_4h5k0?si=ociK_Wt3xIOnqRfi?autoplay=1";
-}
-// Змінні для ідентифікації відео на YouTube
 var videoId = 'XnDz1_4h5k0?si=ociK_Wt3xIOnqRfi';
 var player;
 
-// Функція для створення та відтворення відеоплеєра
 function playVideo() {
-    // Ініціалізація плеєра
+    openVideoPopup();
+
     if (!player) {
-        player = new YT.Player('player', {
+        // Ініціалізація плеєра
+        player = new YT.Player('video-container', {
             height: '360',
             width: '640',
             videoId: videoId,
@@ -93,10 +113,24 @@ function playVideo() {
     }
 }
 
-// Функція, яка викликається, коли відеоплеєр готовий
 function onPlayerReady(event) {
     // Відтворіть відео після готовності плеєра
     event.target.playVideo();
+}
+
+function openVideoPopup() {
+    // Відображення контейнера з відео при натисканні кнопки
+    document.getElementById('video-popup').style.display = 'flex';
+}
+
+function closeVideoPopup() {
+    // Приховання контейнера з відео при натисканні кнопки "Закрити"
+    document.getElementById('video-popup').style.display = 'none';
+
+    // Зупинка відео (додайте код для зупинки відео, якщо це необхідно)
+    if (player) {
+        player.stopVideo();
+    }
 }
 
 

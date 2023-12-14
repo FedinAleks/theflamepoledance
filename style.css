@@ -16,6 +16,7 @@ header {
     justify-content: space-between;
     margin-right: 5%;
 }
+
 .play_button {
     border-radius: 50%;
     display: flex;
@@ -39,9 +40,34 @@ header {
     animation: rotateBackground 5s 
     infinite linear;
 }
-.youtube_video {
-    position: absolute;
+.video-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Півпрозорий фон */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
+.video-container {
+    box-shadow: 10px rgba(0, 0, 0, 0.5);
+}
+.close-button {
+    cursor: pointer;
+    color: #E422C1;
+    margin: 1%;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 
 .main_text_block_1 {
     display: flex;
@@ -171,17 +197,17 @@ h1 {
     transition: 0.3s;
 }
 .spacer {
-    height: 160px; /* Висота вашого меню */
+    height: 100%; /* Висота вашого меню */
     display: none; /* Початково ховаємо */
 }
 #menu.fixed-menu {
-    top: -5%;
+    top: -10%;
     position: fixed;
     padding-left: 5%;
     margin-left: -6%;
     width: 100%;
     background: var(--Gradient, linear-gradient(90deg, #FCCB90 0%, #D57EEB 100%));
-    z-index: 1000; /* Забезпечте, що ваше меню буде поверх інших елементів */
+    z-index: 1000;
 }
 #menu.fixed-menu .image_logo,
 #menu.fixed-menu .pink_button {
@@ -571,6 +597,12 @@ h2 {
     font-weight: 500;
     text-align: center;
 }
+.pink_text_block5 {
+    color: var(--Black, #E422C1);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+}
 .description_section {
     display: flex;
     flex-direction: column;
@@ -686,8 +718,9 @@ h2 {
     background: var(--Pink, #E422C1);
     border: none;
     color: white;
-    padding: 10px 20px 10px 20px;
-    
+    padding: 10px 50px 10px 50px;
+    font-size: 20px;  
+    cursor: pointer;  
 }
 
 .form_block {
@@ -738,7 +771,7 @@ h2 {
 }
 .contact_sections {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 }
 .contacts_text {
@@ -756,6 +789,10 @@ h2 {
 }
 .contact_icons {
     padding-right: 5%;
+}
+.map {
+    width: 700px;
+    height: 500px;
 }
 
 
@@ -839,177 +876,137 @@ footer {
 }
 
 
-
-@media screen and (max-width: 767px) {
-    body {
-        background-size: contain;
-        background-position: center 350px;
-    }
-    .image_logo {
-        width: 60px;
-        height: 33px;
-    }
-    .play_button {
-        position: absolute;
-        margin-top: 15%;
-        margin-left: 60%;
-    }
-    .play_icon {
-        z-index: 1;
-        position: absolute;
-        display: flex;
-        justify-self: center;
-    }
-    .play_icon :hover {
-        fill: #E422C1;
-    }
-    .letters_button {
-        z-index: 0;
-        background-color: none;
-        animation: rotateBackground 5s 
-        infinite linear;
-    }
-    
-    .main_text_block_1 {
-        margin-top: 37%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    .subtitle {
-        color: var(--Black, #242424);
+@media screen and (max-width: 1024px) {
+    .main_text {
         font-size: 16px;
     }
-    .pink_text_subtitle {
+    .pink_maintext {
         font-size: 16px;
-    }
-    h1 {
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 124.585%;
-        letter-spacing: 0.96px;
-        max-width: 725px;
-    }
-    .pink_text_title{
-        font-size: 22px;
-    }
-    
-    .buttons_block_1 {
-        max-width: 100%;
-        margin-top: 300px;
-    }
-    .pink_button {
-        width: 100%;
-        font-size: 16px;
-    }
-    .pinkborder_button {
-        width: 100%;
-        font-size: 16px;
-    }
-    .action_icons {
-        margin-top: -95%;
-        margin-right: 100%;
-    }   
-    .main_list_icons {
-        position: absolute;
-    }
-    .menu {
-        display: none;
     }
 
     .block_subscribe {
-        margin-top: 100%;
-    }
-    .subtitle_subscribe {
-        font-size: 16px;
-        width: 100%;
-    }
-    .subtitle_subscribe2 {
-        display: none;
-    }
-    .line_subscribe {
-        position: absolute;
-        width: 149px;
-        height: 64.443px;
-        margin-top: 30%;
-    }
-    .sticker {
-        position: absolute;
-        margin-top: 50%;
-        margin-left: 55%;
-        width: 135px;
-        height: 133px;
-        background-image: url(./image/stiker_mobile.svg);  
-    }
-    .subcribe_text1 {
-        margin-top: 25%;
-        font-size: 14px;
-    }
-    .subcribe_text2 {
-        font-size: 24px;
+        margin-top: 26%;
     }
 
-
-
-
-    .block_2 {
-        margin-top: 10%;
-    }
     .wrapper_block2 {
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
     .block2_part1_image {
-        width: 100%;
-        height: auto;
+        width: 387px;
+        height: 253px;
     }
-    .block2_part2 {
+    .block2_part2_image {
+        width: 360px;
+        height: 380px;
+    }
+
+    .direction_image {
+        width: 223px;
+        height: 191px;
+    }
+    .block3_list_direction {
+        width: 95%;
+        height: 100%;
+        gap: 3%;
+    }
+
+    .shedule_days_text {
+        font-size: 23px;
+    }
+    .line_subscribe {
+        width: 25%;
+    }
+
+    .block_5 {
+        margin: 5%;
+    }
+    .sticker_2 {
+        width: 103px;
+        height: 103px;
+        transform: rotate(-15deg);
+        background-image: url(./image/stire_2\(Tab_version\).png);
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+    .subcribe_text1 {
+        font-size: 11px;
+    }
+    .subcribe_text2 {
+        font-size: 18px;
+    }
+    .block_price {
+        margin-left: 5%;
+    }
+    .price_section {
+        width: 540px;
+        height: 100px;
+    }
+    .subtitle_block5_description {
+        font-size: 20px;
+    }
+    .pink_text_block5 {
+        font-size: 20px;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+
+    .form_section {
+        gap: 7%;
+    }
+    .form_text_1 .pink_text_subtitle {
+        font-size: 20px;
+    }
+    .form_svg {
         display: none;
     }
 
+    .contact_sections {
+        gap: 5%;
+    }
+    .map {
+        width: 500px;
+        height: 400px;
+    }
+}
 
 
-    .block_3 {
-        margin-left: 5%;
+
+
+@media screen and (max-width: 768px) {
+    .subtitle_subscribe {
+        font-size: 20px;
+        width: 45%;
+    }
+
+    .block2_part1_image {
+        width: 310px;
+        height: 210px;
+    }
+    .block2_part2_image {
+        width: 320px;
+        height: 340px;
+    }
+    .block2_line {
+        width: 180px;
+    }
+
+    .direction_image {
+        width: 223px;
+        height: 191px;
     }
     .block3_list_direction {
-        display: flex;
-        flex-direction: column;
-    }
-    .block3_direction {
-        display: flex;
-        flex-direction: column;
-    }
-    .list ul {
-        display: flex;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 10px;
-        white-space: nowrap;
-        width: 100%;
-    }
-    .list ul li {
-        margin-right: 10px;
+        gap: 3%;
     }
 
-
-
-
-
-    .shedule {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-
-    .block_direction_price {
-        display: flex;
-        flex-direction: column;
-    }
     .price_section {
-
+        width: 400px;
+        height: 80px;
+        margin-bottom: 5%;
     }
+
+    
 }
