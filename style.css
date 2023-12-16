@@ -546,6 +546,19 @@ h2 {
     flex-direction: column; 
     position: absolute;
 }
+.subcribe2_text1 {
+    margin-top: 25%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+}
+.subcribe2_text2 {
+    margin-top: 0%;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1.28px;
+}
 .block_direction_price {
     display: inline-flex;
     align-items: center;
@@ -589,7 +602,7 @@ h2 {
 .block_5_description {
     margin-top: 3%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .subtitle_block5_description {
     color: var(--Black, #242424);
@@ -639,7 +652,7 @@ h2 {
     margin-top: -3%;
     bottom: 0;
     display: flex;
-    width: 285px;
+    max-width: 285px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -775,7 +788,7 @@ h2 {
     align-items: center;
 }
 .contacts_text {
-    width: 40%;
+    max-width: 40%;
 }
 .contact_text_section {
     padding: 2%;
@@ -927,13 +940,13 @@ footer {
         height: 103px;
         transform: rotate(-15deg);
         background-image: url(./image/stire_2\(Tab_version\).png);
-        margin-left: 15%;
-        margin-top: 5%;
+        margin-left: 20%;
+        margin-top: 10%;
     }
-    .subcribe_text1 {
+    .subcribe2_text1 {
         font-size: 11px;
     }
-    .subcribe_text2 {
+    .subcribe2_text2 {
         font-size: 18px;
     }
     .block_price {
@@ -948,6 +961,7 @@ footer {
     }
     .pink_text_block5 {
         font-size: 20px;
+        font-weight: 600;
     }
 
     .slider {
@@ -979,27 +993,58 @@ footer {
 @media screen and (max-width: 768px) {
     .subtitle_subscribe {
         font-size: 20px;
-        width: 45%;
+        width: 70%;
+    }
+    .line_subscribe {
+        display: none;
+    }
+    .sticker {
+        width: 180px;
+        height: 180px;
+    }
+    .subcribe_text1 {
+        font-size: 16px;
+    }
+    .subcribe_text2 {
+        font-size: 32px;
+        font-weight: 600;
     }
 
     .block2_part1_image {
-        width: 310px;
+        width: 300px;
         height: 210px;
     }
     .block2_part2_image {
-        width: 320px;
-        height: 340px;
+        width: 280px;
+        height: 300px;
     }
     .block2_line {
         width: 180px;
     }
 
-    .direction_image {
-        width: 223px;
-        height: 191px;
+    .subtitle_subscribe2 {
+        display: none;
     }
+    
     .block3_list_direction {
-        gap: 3%;
+        display: flex;
+        flex-direction: column;
+    }
+    .direction_list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);;
+    }
+
+    .shedule {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .shedule .days:not(:first-child) {
+        display: none;
+    }
+    .shedule_halls {
+        margin-top: 5%;
     }
 
     .price_section {
@@ -1007,6 +1052,45 @@ footer {
         height: 80px;
         margin-bottom: 5%;
     }
+    .price_text_class {
+        font-size: 20px;
+    }
+    .price_text_price {
+        font-size: 30px;
+    }
 
-    
+    .slider {
+        max-width: 90%;
+    }
+    .slide {
+        flex: 0 0 50%;
+    }
+
+    .form_section {
+        display: flex;
+        flex-direction: column;
+    }
+    .form_text {
+        max-width: 100%;
+    }
+    .form_text_1 {
+        font-size: 20px;
+    }
+
+    .contact_sections {
+        padding-bottom: 5%;
+    }
+    .contact_maintext {
+        font-size: 20px;
+    }
+    .contact_text_icons {
+        margin-top: 7%;
+    }
+    .map {
+        width: 400px;
+        height: 500px;
+    }
+    .footer_menu {
+        display: none;
+    }
 }
