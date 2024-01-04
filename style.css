@@ -560,7 +560,7 @@ h2 {
     letter-spacing: 1.28px;
 }
 .block_direction_price {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: space-around;
 }
@@ -623,6 +623,9 @@ h2 {
     align-items: center;
 }
 
+.marquee_container_2 {
+    overflow: hidden;
+}
 .block_6 {
     margin-top: 5%;
     margin-left: 5%;
@@ -764,8 +767,8 @@ h2 {
     background: var(--Pink, #E422C1);
     border: none;
     display: flex;
-    width: 387px;
-    height: 53px;
+    max-width: 387px;
+    max-height: 53px;
     padding: 28px 59px;
     justify-content: center;
     align-items: center;
@@ -784,11 +787,11 @@ h2 {
 }
 .contact_sections {
     display: flex;
-
+    justify-content: space-around;
     align-items: center;
 }
 .contacts_text {
-    max-width: 40%;
+    max-width: 100%;
 }
 .contact_text_section {
     padding: 2%;
@@ -901,6 +904,10 @@ footer {
         margin-top: 26%;
     }
 
+    #menu.fixed-menu {
+        top: -7%;
+    }
+
     .wrapper_block2 {
         display: flex;
         justify-content: space-around;
@@ -953,8 +960,8 @@ footer {
         margin-left: 5%;
     }
     .price_section {
-        width: 540px;
-        height: 100px;
+        max-width: 540px;
+        max-height: 100px;
     }
     .subtitle_block5_description {
         font-size: 20px;
@@ -991,6 +998,17 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+    #menu.fixed-menu {
+        top: -5%;
+    }
+    .fixed-menu .desktop_menu li a,
+    .fixed-menu .pink_button {
+    font-size: 16px; /* Розмір тексту для фіксованого меню */
+    }
+    .fixed-menu .pink_button {
+        width: 150%;
+    }
+
     .subtitle_subscribe {
         font-size: 20px;
         width: 70%;
@@ -1040,16 +1058,16 @@ footer {
         white-space: nowrap;
     }
     
-    .shedule .days:not(:first-child) {
-        display: none;
-    }
-    .shedule_halls {
+    .schedule-nav {
         margin-top: 5%;
+        margin-bottom: 5%;
+        display: flex;
+        justify-content: center;
     }
 
     .price_section {
-        width: 400px;
-        height: 80px;
+        max-width: 400px;
+        max-height: 80px;
         margin-bottom: 5%;
     }
     .price_text_class {
@@ -1080,6 +1098,10 @@ footer {
     .contact_sections {
         padding-bottom: 5%;
     }
+    .contact_pinksubtitle {
+        font-size: 20px;
+        font-weight: 700;
+    }
     .contact_maintext {
         font-size: 20px;
     }
@@ -1090,7 +1112,349 @@ footer {
         width: 400px;
         height: 500px;
     }
+
     .footer_menu {
         display: none;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .action_icons {
+        position: absolute;
+        margin-top: 60%;
+    }
+    
+    .block2_part1 {
+        width: 100%;
+    }
+    .block2_part2 {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    body {
+        background-position: center 435px;
+        background-size: contain;
+    }
+    .play_button {
+        
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .pink_text_subtitle {
+        font-size: 16px;
+    }
+    .pink_text_title {
+        font-size: 28px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .action_icons {
+        position: absolute;
+        margin-top: 60%;
+    }
+    .buttons_block_1 {
+        margin-top: 100%;
+    }
+    .pink_button_homepage {
+        width: 45%;
+    }
+    .pinkborder_button {
+        width: 45%;
+    }
+    .menu {
+        display: none;
+    }
+
+
+    .block_subscribe {
+        margin-top: 30%;
+    }
+    .subtitle_subscribe {
+        font-size: 16px;
+        width: 100%;
+    }
+    .sticker {
+        margin-top: 43%;
+        margin-left: 55%;
+        width: 132px;
+        height: 132px;
+        background-image: url(./image/stiker_mobversion.svg);
+    }
+    .subcribe_text1 {
+        font-size: 14px;
+    }
+    .subcribe_text2 {
+        font-size: 24px;
+    }
+
+    .block_2 {
+        margin-top: 17%;
+    }
+    .block2_part1 {
+        width: 100%;
+    }
+    .block2_part2 {
+        display: none;
+    }
+
+    .direction_list {
+        display: flex;
+        gap: 7%;
+        overflow: auto;
+        margin-left: -5%;
+    }
+    .list a {
+        font-size: 20px;
+    }
+    .list li {
+        padding-bottom: 7%;
+    }
+    .block3_direction {
+        margin-top: 5%;
+    }
+    .block_title {
+        width: 7em;
+    }
+    .main_text {
+        width: 19em;
+    }
+    .direction_image_button {
+        display: flex;
+        align-items: center;
+    }
+    .direction_image {
+        width: 305px;
+        height: 260px;
+    }
+
+    .shedule_days_text {
+        font-size: 20px;
+    }
+    .shedule_time {
+        font-size: 18px;
+    }
+    .shedule_classname {
+        font-size: 16px;
+    }
+    .shedule_polehall {
+        display: none;
+    }
+    .days {
+        margin-bottom: 5%;
+    }
+    .shedule_line_monday {
+        display: none;
+    }
+    .shedule_line_tuesday {
+        display: none;
+    }
+    .shedule_line_saturday {
+        display: none;
+    }
+
+    .sticker_2 {
+        margin-left: 60%;
+        margin-top: 10%;
+    }
+    .block_direction_price {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .list {
+        width: 100%;
+    }
+    .price_section {
+        width: 118%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_class {
+        font-size: 16px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_price {
+        font-size: 26px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .black_button {
+        padding-left: 3%;
+    }
+    .description_section {
+        padding-bottom: 5%;
+    }
+    .block_5_description {
+        display: none;
+    }
+    
+    .marquee_container_2 {
+        margin-top: 5%;
+    }
+
+    .subtitle_block_6 {
+        font-size: 16px;
+    }
+
+    .photo-grid {
+        display: flex;
+        overflow-x: auto;
+
+    }
+    .showMoreButton {
+        width: 353;
+        height: 53;
+        font-size: 16px;
+    }
+
+    .form_block {
+        margin-top: 10%;
+    }
+    .form-container {
+        margin-top: 5%;
+    }
+    .pink_button_form {
+        width: 353;
+        height: 53;
+        font-size: 16px;
+    }
+
+    .contact_sections {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .contacts_text {
+        width: 100em;
+    }
+
+    .map {
+        margin-top: 15%;
+        width: 340px;
+        height: 315px;
+    }
+
+    footer {
+        padding: 15%;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_maintext {
+        font-size: 16px;
+    }
+    .footer_hours {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .footer_text_section {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
+@media screen and (max-width: 320px) {
+    body {
+        background-position: center 405px;
+        background-size: contain;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 124.585%; /* 68.522px */
+        letter-spacing: 1.65px;
+    }
+    .action_icons {
+        position: absolute;
+        margin-top: 47%;
+    }
+    .buttons_block_1 {
+        margin-top: 110%;
+    }
+    .pink_button_homepage {
+        width: 45%;
+    }
+    .pinkborder_button {
+        width: 45%;
+    }
+
+    .wrapper_subscribe {
+        margin-left: 5%;
+    }
+    .sticker {
+        display: none;
+    }
+    .subtitle_subscribe {
+        font-size: 18px;
+    }
+
+    .main_text {
+        width: 17em;
+    }
+    .block2_part1_image {
+        width: 280px;
+        height: 200px;
+    }
+
+    .direction_image {
+        width: 280px;
+        height: 240px;
+    }
+
+    .wrapper_subscribe {
+        padding-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .days {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .shedule_days_text {
+        font-size: 18px;
+    }
+
+    .sticker_2 {
+        margin-left: 50%;
+        margin-top: 10%;
+    }
+    .list {
+        width: 100%;
+    }
+    .block_price {
+        margin-left: 0%;
+    }
+    .price_section {
+        width: 118%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_class {
+        font-size: 12px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_price {
+        font-size: 24px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    
+    .slider {
+        max-width: 100%;
+    }
+    .slide {
+        padding: 0 5px;
+    }
+
+    .map {
+        width: 268px;
     }
 }

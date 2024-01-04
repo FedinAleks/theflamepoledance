@@ -269,7 +269,7 @@
                         <svg class="green_circle" xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
                             <circle cx="5" cy="5.5" r="5" fill="#054A4C"/>
                         </svg>
-                        <span class="shedule_classname">Exotic pd (пт pole dance)</span>
+                        <span class="shedule_classname">Exotic pd (пт pd)</span>
                     </div>
                     <div class="shedule_part2">
                         <span class="shedule_time">12:00</span>
@@ -491,6 +491,10 @@
                 </div>
             </div>
         </div>
+        <div class="schedule-nav">
+            <button class="prevButton" onclick="changeSchedule(-1)">Назад</button>
+            <button class="nextButton" onclick="changeSchedule(1)">Вперед</button>
+        </div>
         <div class="shedule_halls">
             <div class="shedule_polehall">
                 <svg class="shedule_halls_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -545,7 +549,7 @@
             </div>
         </div>
     </div>
-    <div class="marquee_container">
+    <div class="marquee_container_2">
         <div class="marquee">
             ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я. КРАСА. ЖІНОЧНІСТЬ. ЗДОРОВ’Я.КРАСА.
         </div>
@@ -711,8 +715,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="contact_map_section">
-                <p class="subtitle">Знайдіть нас на мапі</p>
+            <div class="contact_map_section">                
                 <div class="map" id="map"></div>
             </div>
         </div>
