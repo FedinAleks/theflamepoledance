@@ -67,6 +67,16 @@ header {
     font-weight: 500;
     cursor: pointer;
 }
+.mobile-menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+.mobile-menu {
+    display: none;
+    /* Стилі для блоку мобільного меню */
+}
 
 
 .main_text_block_1 {
@@ -665,35 +675,59 @@ h2 {
 .slider_button {
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 5%;
 }
+/* Стилі для кнопки "Назад" */
 .prevButton {
-    border-radius: 5px;
+    border-radius: 100px;
     border: 1px solid var(--Pink, #E422C1);
     color: #E422C1;
-    width: 130px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
+    position: relative;
+    padding-left: 40px; /* Задаємо певний відступ для стрілки */
 }
+
+/* Стилі для кнопки "Вперед" */
 .nextButton {
-    margin-left: 1%;
-    border-radius: 5px;
+    margin-left: 5%;
+    border-radius: 100px;
     border: 1px solid var(--Pink, #E422C1);
     color: #E422C1;
-    width: 130px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
+    position: relative;
+    padding-right: 40px; /* Задаємо певний відступ для стрілки */
 }
+
+/* Стилі для стрілок */
+.prevButton::before,
+.nextButton::after {
+    content: '←'; /* Символ стрілки для "Назад" */
+    position: absolute;
+    left: 10px; /* Регулюємо положення стрілки */
+    top: 50%; /* Розташовуємо стрілку по центру вертикалі */
+    transform: translateY(-50%); /* Вирівнюємо стрілку вертикально */
+}
+
+.nextButton::after {
+    content: '→'; /* Символ стрілки для "Вперед" */
+    left: auto;
+    right: 10px; /* Регулюємо положення стрілки */
+}
+
 
 .gallery {
     margin-top: 5%;
@@ -1120,9 +1154,120 @@ footer {
 
 
 @media screen and (max-width: 425px) {
+    body {
+        background-position: center 500px;
+        background-size: contain;
+    }
+    .image_logo_first {
+        padding-top: 5%;
+        width: 80px;
+        height: 45px;
+    }
+    .play_button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        padding-top: 5%;
+        padding-right: 5%;
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 3;
+    }    
+    .desktop_menu {
+        display: none;
+    }
+    .mobile-menu.active {
+        display: block;
+    }      
+    .mobile-menu {
+        margin-top: 30%;
+        display: none;
+        position: fixed;
+        font-size: 32px;
+        width: 100%;
+        height: 100%;
+        background: var(--Gradient, linear-gradient(90deg, #FCCB90 0%, #D57EEB 100%));
+        padding-top: 50px;
+        z-index: 2;
+        margin-left: -10%;
+        margin-top: -10%;
+        list-style: none;
+    }
+    .mobile-menu li {
+        margin-bottom: 40px; /* Відступ між кожним пунктом списку */
+      }
+    .mobile-menu a:hover {
+        background-color: #555;
+    }
+    .burger_image_logo {
+        margin-left: 5%;
+    }
+    .burger_menu {
+        margin-left: 5%;
+        text-decoration: none;
+        color: #242424;
+    }
+    .pinkborder_button_menu {
+        border-radius: 5px;
+        border: 1px solid var(--Pink, #E422C1);
+        color: #E422C1;
+        width: 100%;
+        height: 50px;
+        background-color: transparent;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+    }
+
+    h1 {
+        font-size: 34px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .pink_text_title {
+        font-size: 34px;
+    }
+
     .action_icons {
         position: absolute;
-        margin-top: 60%;
+        margin-top: 80%;
+    }
+
+    .menu {
+        display: none;
+    }
+    .buttons_block_1 {
+        margin-top: 85%;
+    }
+    .pink_button_homepage {
+        width: 45%;
+    }
+    .pinkborder_button {
+        width: 45%;
+    }
+
+    .sticker {
+        margin-top: 43%;
+        margin-left: 55%;
+        width: 132px;
+        height: 132px;
+        background-image: url(./image/stiker_mobversion.svg);
+    }
+    .subcribe_text1 {
+        font-size: 14px;
+    }
+    .subcribe_text2 {
+        font-size: 24px;
+    }
+
+
+    .block_subscribe {
+        margin-top: 30%;
     }
     
     .block2_part1 {
@@ -1131,12 +1276,115 @@ footer {
     .block2_part2 {
         display: none;
     }
+
+    .direction_list {
+        display: flex;
+        gap: 7%;
+        overflow: auto;
+        margin-left: -5%;
+    }
+    .list a {
+        font-size: 20px;
+    }
+    .list li {
+        padding-bottom: 7%;
+    }
+    .block3_direction {
+        margin-top: 5%;
+    }
+    .block_title {
+        width: 7em;
+    }
+    .main_text {
+        width: 19em;
+    }
+    .direction_image_button {
+        display: flex;
+        align-items: center;
+    }
+    .direction_image {
+        width: 21em;
+        height: 18em;
+    }
+
+    .shedule_polehall {
+        display: none;
+    }
+
+    .sticker_2 {
+        margin-left: 60%;
+        margin-top: 20%;
+    }
+    .block_direction_price {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .list {
+        width: 100%;
+    }
+    .price_section {
+        width: 130%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_class {
+        font-size: 16px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .price_text_price {
+        font-size: 26px;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .black_button {
+        padding-left: 3%;
+    }
+    .description_section {
+        padding-bottom: 5%;
+    }
+    .block_5_description {
+        display: none;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+    .slide {
+        flex: 0 0 33.33%;
+        box-sizing: border-box;
+        padding: 0 10px;
+        margin-top: 3%;
+    }
+
+    .form_block {
+        margin-top: 10%;
+    }
+
+    .contact_sections {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .contacts_text {
+        width: 100em;
+    }
+
+    .map {
+        margin-top: 15%;
+        width: 23em;
+        height: 31em;
+    }
+    .footer_hours {
+        display: none;
+    }
 }
 
 
 @media screen and (max-width: 375px) {
     body {
-        background-position: center 435px;
+        background-position: center 405px;
         background-size: contain;
     }
     .play_button {
@@ -1159,7 +1407,7 @@ footer {
         margin-top: 60%;
     }
     .buttons_block_1 {
-        margin-top: 100%;
+        margin-top: 110%;
     }
     .pink_button_homepage {
         width: 45%;
@@ -1262,6 +1510,7 @@ footer {
         margin-left: 60%;
         margin-top: 10%;
     }
+    
     .block_direction_price {
         display: flex;
         flex-direction: column;
@@ -1360,7 +1609,7 @@ footer {
 }
 @media screen and (max-width: 320px) {
     body {
-        background-position: center 405px;
+        background-position: center 355px;
         background-size: contain;
     }
     h1 {
@@ -1370,10 +1619,10 @@ footer {
     }
     .action_icons {
         position: absolute;
-        margin-top: 47%;
+        margin-top: 67%;
     }
     .buttons_block_1 {
-        margin-top: 110%;
+        margin-top: 90%;
     }
     .pink_button_homepage {
         width: 45%;
@@ -1401,8 +1650,8 @@ footer {
     }
 
     .direction_image {
-        width: 280px;
-        height: 240px;
+        width: 16em;
+        height: 13em;
     }
 
     .wrapper_subscribe {

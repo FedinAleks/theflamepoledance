@@ -1,3 +1,48 @@
+// меню бургер
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle('active');
+    const menuIcon = document.querySelector('.mobile-menu-icon img');
+    menuIcon.src = mobileMenu.classList.contains('active') ? './image/iconamoon_close.png' : './image/menu_icon_mobile.png';
+    menuIcon.alt = mobileMenu.classList.contains('active') ? 'Close Icon' : 'Menu Icon';
+  }
+
+  mobileMenuIcon.addEventListener('click', function() {
+    toggleMobileMenu();
+  });
+
+  mobileMenuLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Закриваємо меню після натискання на будь-який пункт меню
+        toggleMobileMenu();
+      }
+    });
+  });
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      mobileMenuIcon.style.top = '0';
+    } else {
+      mobileMenuIcon.style.top = '10px';
+    }
+  });
+});
+
+
+
+// shedulе
 const daysBlocks = document.querySelectorAll('.days');
 let currentDayIndex = 0;
 

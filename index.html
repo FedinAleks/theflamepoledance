@@ -24,6 +24,20 @@
                     <div id="video-container" class="video-container"></div>
                     <div id="close-button" class="close-button" onclick="closeVideoPopup()">Закрити</div>
                 </div>
+
+                <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                    <img src="./image/menu_icon_mobile.png">
+                </div>
+                <ul class="mobile-menu">
+                    <li><a href="#home" class="burger_image_logo"><img src="./image/logo_image.svg" alt="Logo"></a></li>                        
+                    <li><a href="#about" class="burger_menu">Про нас</a></li>
+                    <li><a href="#services" class="burger_menu">Напрямки</a></li>
+                    <li><a href="#schedule" class="burger_menu">Розклад</a></li>
+                    <li><a href="#prices" class="burger_menu">Ціни</a></li>
+                    <li><a href="#contact" class="burger_menu">Контакти</a></li>
+                    <div class="menu_buttons">
+                        <li><button id="pink_button" class="pink_button_homepage" onclick="openTelegramChat()">Записатись</button></li>                    </div>
+                </ul>
             </header>
                 <div class="main_text_block_1">
                     <div>
@@ -79,7 +93,8 @@
                 <div class="spacer"></div>
                 <nav id="menu" class="menu">
                     <ul class="desktop_menu">
-                        <li><a href="#home" class="image_logo"><img src="./image/logo_image.svg" alt="Logo"></a></li>                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#home" class="image_logo"><img src="./image/logo_image.svg" alt="Logo"></a></li>                        
+                        <li><a href="#about">Про нас</a></li>
                         <img class="menu_line" src="./image/Line (menu).svg">
                         <li><a href="#services">Напрямки</a></li>
                         <img class="menu_line" src="./image/Line (menu).svg">
@@ -88,7 +103,8 @@
                         <li><a href="#prices">Ціни</a></li>
                         <img class="menu_line" src="./image/Line (menu).svg">
                         <li><a href="#contact">Контакти</a></li>
-                        <li><button id="pink_button" class="pink_button" onclick="openTelegramChat()">Записатись</button></li>                    </ul>
+                        <li><button id="pink_button" class="pink_button" onclick="openTelegramChat()">Записатись</button></li>                    
+                    </ul>
                 </nav>
         </div>
     </div>
@@ -492,8 +508,8 @@
             </div>
         </div>
         <div class="schedule-nav">
-            <button class="prevButton" onclick="changeSchedule(-1)">Назад</button>
-            <button class="nextButton" onclick="changeSchedule(1)">Вперед</button>
+            <button class="prevButton" onclick="changeSchedule(-1)"></button>
+            <button class="nextButton" onclick="changeSchedule(1)"></button>
         </div>
         <div class="shedule_halls">
             <div class="shedule_polehall">
@@ -634,8 +650,8 @@
             </div>
         </div>
         <div class="slider_button">
-            <button id="prevButton" class="prevButton">Назад</button>
-            <button id="nextButton" class="nextButton">Вперед</button>
+            <button id="prevButton" class="prevButton"></button>
+            <button id="nextButton" class="nextButton"></button>
         </div>
     </div>
     <div class="gallery">
