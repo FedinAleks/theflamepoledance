@@ -15,8 +15,13 @@ header {
     display: flex;
     justify-content: space-between;
     margin-right: 5%;
+    align-items: center;
 }
 
+.image_logo_first {
+    width: 9em;
+    height: 5em;
+}
 .play_button {
     border-radius: 50%;
     display: flex;
@@ -376,6 +381,7 @@ h2 {
     align-items: center;
     justify-content: center;
     width: 90%;
+    height: 35em;
     gap: 5%;
 }
 .list ul {
@@ -452,15 +458,18 @@ h2 {
 .block_4 {
     margin-left: 5%;
     margin-top: 3%;
+    width: 90%;
 }
 .shedule {
     display: flex;
     justify-content: space-around;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .days {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .shedule_days_text {
     color: var(--Pink, #E422C1);
@@ -471,37 +480,31 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    margin-top: -5%;
-    z-index: 0;
 }
 .shedule_part_tuesday {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    margin-top: -5%;
-    z-index: 0;
 }
 .shedule_part_saturday {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    margin-top: -5%;
-    z-index: 0;
 }
 .shedule_line_monday {
-    margin-top: 17%;
-    margin-left: -17%;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: -4.5%;
 }
 .shedule_line_tuesday {
-    margin-top: 30%;
-    margin-left: -30%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: -4%;
 }
 .shedule_line_saturday {
-    margin-top: 71%;
-    margin-left: -70%;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: -3.5%;
 }
 .shedule_time_class {
     display: flex;
@@ -509,9 +512,12 @@ h2 {
     margin-top: 10%;
 }
 .shedule_part2 {
-    display: inline-flex;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
-    gap: 34px;
+    gap: 10%;
     padding-bottom: 20px;
     z-index: 1;
 }
@@ -525,6 +531,7 @@ h2 {
 }
 
 .shedule_halls {
+    margin-top: 3em;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -933,6 +940,10 @@ footer {
     .pink_maintext {
         font-size: 16px;
     }
+    .image_logo_first {
+        width: 7em;
+        height: 4em;
+    }
 
     .block_subscribe {
         margin-top: 26%;
@@ -962,12 +973,27 @@ footer {
     }
     .block3_list_direction {
         width: 95%;
-        height: 100%;
+        height: 36em;
         gap: 3%;
     }
 
     .shedule_days_text {
         font-size: 23px;
+    }
+    .shedule_line_monday {
+        position: absolute;
+        margin-top: 5%;
+        margin-left: -6%;
+    }
+    .shedule_line_tuesday {
+        position: absolute;
+        margin-top: 4%;
+        margin-left: -5%;
+    }
+    .shedule_line_saturday {
+        position: absolute;
+        margin-top: 4%;
+        margin-left: -5%;
     }
     .line_subscribe {
         width: 25%;
@@ -1081,6 +1107,12 @@ footer {
     .block3_list_direction {
         display: flex;
         flex-direction: column;
+        margin-top: 3em;
+        margin-bottom: 3em;
+        width: 95%;
+    }
+    .block3_direction {
+        height: 28em;
     }
     .direction_list {
         display: grid;
@@ -1091,7 +1123,21 @@ footer {
         overflow-x: auto;
         white-space: nowrap;
     }
-    
+    .shedule_line_monday {
+        position: absolute;
+        margin-top: 9%;
+        margin-left: -6.5%;
+    }
+    .shedule_line_tuesday {
+        position: absolute;
+        margin-top: 7%;
+        margin-left: -7%;
+    }
+    .shedule_line_saturday {
+        position: absolute;
+        margin-top: 6%;
+        margin-left: -6.5%;
+    }
     .schedule-nav {
         margin-top: 5%;
         margin-bottom: 5%;
@@ -1277,9 +1323,13 @@ footer {
         display: none;
     }
 
+    .block3_list_direction {
+        margin-top: 12em;
+        margin-bottom: 13em;
+    }
     .direction_list {
         display: flex;
-        gap: 7%;
+        gap: 5%;
         overflow: auto;
         margin-left: -5%;
     }
@@ -1290,7 +1340,7 @@ footer {
         padding-bottom: 7%;
     }
     .block3_direction {
-        margin-top: 5%;
+        height: auto;
     }
     .block_title {
         width: 7em;
@@ -1307,10 +1357,28 @@ footer {
         height: 18em;
     }
 
+    .shedule_line_monday {
+        position: absolute;
+        margin-top: 15%;
+        margin-left: -11%;
+    }
+    .shedule_line_tuesday {
+        position: absolute;
+        margin-top: 13%;
+        margin-left: -12%;
+    }
+    .shedule_line_saturday {
+        position: absolute;
+        margin-top: 10%;
+        margin-left: -12%;
+    }
     .shedule_polehall {
         display: none;
     }
 
+    .block_5 {
+        height: 780px;
+    }
     .sticker_2 {
         margin-left: 60%;
         margin-top: 20%;
@@ -1318,38 +1386,28 @@ footer {
     .block_direction_price {
         display: flex;
         flex-direction: column;
-        align-items: start;
     }
     .list {
         width: 100%;
     }
-    .price_section {
-        width: 130%;
-        padding-left: 3%;
-        padding-right: 3%;
+    .block_price {
+        margin-left: 0%;
     }
     .price_text_class {
         font-size: 16px;
-        padding-left: 3%;
-        padding-right: 3%;
     }
     .price_text_price {
         font-size: 26px;
-        padding-left: 3%;
-        padding-right: 3%;
-    }
-    .black_button {
-        padding-left: 3%;
-    }
-    .description_section {
-        padding-bottom: 5%;
     }
     .block_5_description {
         display: none;
     }
+    .description_section {
+            padding-bottom: 5%;
+        }
 
     .slider {
-        max-width: 100%;
+        max-width: 79%;
     }
     .slide {
         flex: 0 0 33.33%;
@@ -1548,6 +1606,9 @@ footer {
         margin-top: 5%;
     }
 
+    .slider {
+        max-width: 89%;
+    }
     .subtitle_block_6 {
         font-size: 16px;
     }
@@ -1697,10 +1758,17 @@ footer {
     }
     
     .slider {
-        max-width: 100%;
+        max-width: 95%;
+        margin-left: 0%;
     }
     .slide {
-        padding: 0 5px;
+        padding-right: 0px;
+    }
+    .slides {
+        
+    }
+    .member_foto {
+        
     }
 
     .map {

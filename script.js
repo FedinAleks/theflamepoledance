@@ -281,6 +281,10 @@ function closeVideoPopup() {
     if (player) {
         player.stopVideo();
     }
+    
+    var videoContainer = document.getElementById('video-container');
+    videoContainer.innerHTML = '';
+    player = null;
 }
 
 
@@ -370,7 +374,7 @@ showButtons();
 
 
 
-
+// directions
 var currentDescription = document.querySelector('.block3_direction:first-child');
 
 function showDescription(descriptionId, event) {
