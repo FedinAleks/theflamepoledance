@@ -175,14 +175,31 @@ function onYouTubeIframeAPIReady() {
 // Slider price
 
 var prices = {
-  adults: [200, 700, 1280, 1690, 2990],
-  children: [185, 660, 1180, 1380],
+  adults: {
+    1: 200,
+    4: 700,
+    8: 1280,
+    12: 1500,
+    16: 1690,
+    30: 2990
+  },
+  children: {
+    4: 660,
+    8: 1180,
+    12: 1380
+  },
   individual: {
-      solo: 700,
-      duet: 850
+    solo: 700,
+    duet: 850
   },
   rental: {
-      from300: 300
+    from300: 300
+  },
+  subscriptions: {
+    4: 700,
+    8: 1200,
+    12: 1600,
+    16: 2000
   }
 };
 
@@ -192,8 +209,18 @@ function changeCategory(category, event) {
   currentCategory = category;
   updatePrices();
   if (event) {
-      event.preventDefault(); // Заблокує стандартну дію посилання
-      event.stopPropagation(); // Зупинить випливання подій
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+
+function getWordForm(count) {
+  if (count % 10 === 1 && count % 100 !== 11) {
+    return 'заняття';
+  } else if ((count % 10 === 2 || count % 10 === 3 || count % 10 === 4) && (count % 100 < 10 || count % 100 >= 20)) {
+    return 'заняття';
+  } else {
+    return 'занять';
   }
 }
 
@@ -202,18 +229,27 @@ function updatePrices() {
   priceBlock.innerHTML = '';
 
   if (currentCategory === 'individual') {
-      var soloSection = createPriceSection('Соло', prices.individual.solo);
-      var duetSection = createPriceSection('Дуєт', prices.individual.duet);
-      priceBlock.appendChild(soloSection);
-      priceBlock.appendChild(duetSection);
+    var soloSection = createPriceSection('Соло', prices.individual.solo);
+    var duetSection = createPriceSection('Дуєт', prices.individual.duet);
+    priceBlock.appendChild(soloSection);
+    priceBlock.appendChild(duetSection);
   } else if (currentCategory === 'rental') {
-      var rentalSection = createPriceSection('Оренда залів', prices.rental.from300);
-      priceBlock.appendChild(rentalSection);
-  } else {
-      for (var i = 0; i < prices[currentCategory].length; i++) {
-          var priceSection = createPriceSection((i + 1) + ' заняття', prices[currentCategory][i]);
-          priceBlock.appendChild(priceSection);
+    var rentalSection = createPriceSection('Оренда залів', prices.rental.from300);
+    priceBlock.appendChild(rentalSection);
+  } else if (currentCategory === 'subscriptions') {
+    for (var duration in prices.subscriptions) {
+      if (prices.subscriptions.hasOwnProperty(duration)) {
+        var priceSection = createPriceSection(duration + ' ' + getWordForm(duration), prices.subscriptions[duration]);
+        priceBlock.appendChild(priceSection);
       }
+    }
+  } else {
+    for (var duration in prices[currentCategory]) {
+      if (prices[currentCategory].hasOwnProperty(duration)) {
+        var priceSection = createPriceSection(duration + ' ' + getWordForm(duration), prices[currentCategory][duration]);
+        priceBlock.appendChild(priceSection);
+      }
+    }
   }
 }
 
@@ -221,17 +257,15 @@ function createPriceSection(classText, price) {
   var priceSection = document.createElement('div');
   priceSection.className = 'price_section';
   priceSection.innerHTML = '<div class="price_general">' +
-      '<p class="price_text_class">' + classText + '</p>' +
-      '<p class="price_text_price">' + price + 'грн</p>' +
-      '<button class="black_button" onclick="order(' + price + ')">Замовити</button>' +
-      '</div>';
+    '<p class="price_text_class">' + classText + '</p>' +
+    '<p class="price_text_price">' + price + 'грн</p>' +
+    '<button class="black_button" data-price="' + price + '">Замовити</button>' +
+    '</div>';
   return priceSection;
 }
 
 function order(price) {
-  // Замініть цей URL на посилання на ваш Telegram-чат
   var telegramChatUrl = 'https://t.me/theflamepoledance';
-  // Відкриття Telegram-чату в новому вікні
   window.open(telegramChatUrl, '_blank');
 }
 
@@ -239,8 +273,8 @@ updatePrices();
 
 
 
-
 // iframe playvideo
+
 var videoId = 'XnDz1_4h5k0?si=ociK_Wt3xIOnqRfi';
 var player;
 
@@ -326,51 +360,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener('scroll', handleScroll);
 });
-
-
-
-// slider trainers
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
-const slidesContainer = document.getElementById("slides");
-
-let currentSlide = 0;
-let canNavigateNext = true;
-
-function showButtons() {
-  prevButton.style.display = currentSlide === 0 ? "none" : "block";
-  nextButton.style.display =
-    currentSlide === slidesContainer.children.length - 1 ? "none" : "block";
-}
-
-function showSlide() {
-  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-prevButton.addEventListener("click", () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-    canNavigateNext = true; // Робимо можливим гортання далі після натискання "Previous"
-    showSlide();
-    showButtons();
-  }
-});
-
-nextButton.addEventListener("click", () => {
-  if (canNavigateNext && currentSlide < slidesContainer.children.length - 1) {
-    currentSlide++;
-    showSlide();
-    showButtons();
-
-    // Забороняємо гортання далі після досягнення останнього слайду
-    if (currentSlide === slidesContainer.children.length - 1) {
-      canNavigateNext = false;
-    }
-  }
-});
-
-// Початкове налаштування
-showButtons();
 
 
 
