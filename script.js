@@ -259,7 +259,7 @@ function createPriceSection(classText, price) {
   priceSection.innerHTML = '<div class="price_general">' +
     '<p class="price_text_class">' + classText + '</p>' +
     '<p class="price_text_price">' + price + 'грн</p>' +
-    '<button class="black_button" data-price="' + price + '">Замовити</button>' +
+    '<button class="black_button" onclick="openTelegramChat()" data-price="' + price + '">Замовити</button>' +
     '</div>';
   return priceSection;
 }
@@ -388,3 +388,14 @@ var directionLink = document.getElementById('directionLink');
 directionLink.addEventListener('click', function (event) {
     showDescription('yourDescriptionId', event);
 });
+
+
+// Функція для відкриття Instagram-профілю в новому вікні
+
+function openInstagramProfile() {
+  // URL вашого Instagram-профілю
+  var instagramProfileUrl = 'https://instagram.com/theflamepole/';
+
+  // Відкриваємо Instagram-профіль в новому вікні
+  window.open(instagramProfileUrl, '_blank');
+}
