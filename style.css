@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 .wrapper {
     margin-left: 5%;
 }
@@ -6,6 +8,7 @@ body {
     background-color: #FFEAE7;
     font-family: 'Rubik Mono One', sans-serif;
     font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #242424;
     background-image: url(./image/image_main.png);
     background-repeat: no-repeat;
@@ -104,20 +107,20 @@ header {
 }
 h1 {
     color: var(--Black, #242424);
-    font-family: Rubik Mono One;
-    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 74px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 124.585%; /* 68.522px */
     letter-spacing: 1.65px;
     max-width: 725px;
 }
 .pink_text_title{
     color: var(--Black, #E422C1);
-    font-family: Rubik Mono One;
-    font-size: 48px;
+    font-family: 'Raleway';
+    font-size: 64px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 124.585%;
     letter-spacing: 1.65px;
 }
@@ -237,7 +240,7 @@ h1 {
 .block_subscribe {
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 14.6%;
+    margin-top: 6%;
     max-width: 100%;
     background: var(--Gradient, linear-gradient(90deg, #FCCB90 0%, #D57EEB 100%));
     background-size: 100%;
@@ -854,7 +857,7 @@ footer {
     }
 
     .block_subscribe {
-        margin-top: 26%;
+        margin-top: 14%;
     }
 
     #menu.fixed-menu {
@@ -976,7 +979,16 @@ footer {
     .fixed-menu .pink_button {
         width: 150%;
     }
+    h1 {
+        font-size: 48px;
+    }
+    .pink_text_title{
+        font-size: 48px;
+    }
 
+    .block_subscribe {
+        margin-top: 35%;
+    }
     .subtitle_subscribe {
         font-size: 20px;
         width: 70%;
@@ -1109,7 +1121,7 @@ footer {
 
 @media screen and (max-width: 425px) {
     body {
-        background-position: center 500px;
+        background-position: center 450px;
         background-size: contain;
     }
     .image_logo_first {
@@ -1189,14 +1201,14 @@ footer {
 
     .action_icons {
         position: absolute;
-        margin-top: 80%;
+        margin-top: 70%;
     }
 
     .menu {
         display: none;
     }
     .buttons_block_1 {
-        margin-top: 85%;
+        margin-top: 100%;
     }
     .pink_button_homepage {
         width: 45%;
@@ -1285,7 +1297,7 @@ footer {
     }
 
     .block_5 {
-        height: 780px;
+        max-height: 57em;
     }
     .sticker_2 {
         margin-left: 60%;
@@ -1312,7 +1324,7 @@ footer {
     }
     .description_section {
             padding-bottom: 5%;
-        }
+    }
 
     .slider {
         max-width: 79%;
@@ -1350,12 +1362,10 @@ footer {
 
 @media screen and (max-width: 375px) {
     body {
-        background-position: center 405px;
+        background-position: center 375px;
         background-size: contain;
     }
-    .play_button {
-        
-    }
+
     .subtitle {
         font-size: 16px;
     }
@@ -1370,7 +1380,7 @@ footer {
     }
     .action_icons {
         position: absolute;
-        margin-top: 60%;
+        margin-top: 50%;
     }
     .buttons_block_1 {
         margin-top: 110%;
@@ -1578,7 +1588,7 @@ footer {
 }
 @media screen and (max-width: 320px) {
     body {
-        background-position: center 355px;
+        background-position: center 320px;
         background-size: contain;
     }
     h1 {
@@ -1588,7 +1598,7 @@ footer {
     }
     .action_icons {
         position: absolute;
-        margin-top: 67%;
+        margin-top: 53%;
     }
     .buttons_block_1 {
         margin-top: 90%;
