@@ -1402,6 +1402,9 @@ footer {
     .shedule_polehall {
         display: none;
     }
+    .line_subscribe {
+        display: none;
+    }
 
     .block_5 {
         max-height: 57em;
@@ -1458,7 +1461,7 @@ footer {
 
     .map {
         margin-top: 15%;
-        width: 23em;
+        width: 22em;
         height: 31em;
     }
 
@@ -1689,8 +1692,7 @@ footer {
 
     .map {
         margin-top: 15%;
-        width: 340px;
-        height: 315px;
+        width: 19em;
     }
 
     footer {
