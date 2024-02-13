@@ -190,7 +190,7 @@ h1 {
     stroke:  #E422C1;
 }
 .mail:hover {
-    fill: #E422C1;
+    stroke: #E422C1;
 }
 
 .menu ul {
@@ -1090,6 +1090,11 @@ footer {
         overflow-x: auto;
         white-space: nowrap;
     }
+    .shedule_days_text {
+        color: var(--Pink, #E422C1);
+        font-size: 20px;
+        font-weight: 500;
+    }
     .shedule_line_monday {
         position: absolute;
         margin-top: 9%;
@@ -1750,6 +1755,9 @@ footer {
     .wrapper_subscribe {
         margin-left: 5%;
     }
+    .line_subscribe {
+        display: none;
+    }
     .sticker {
         display: none;
     }
@@ -1783,7 +1791,7 @@ footer {
         margin-bottom: 5%;
     }
     .shedule_days_text {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .sticker_2 {
