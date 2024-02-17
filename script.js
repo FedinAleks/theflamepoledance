@@ -43,8 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // shedule
+// JavaScript
 const daysBlocks = document.querySelectorAll('.days');
 let currentDayIndex = 0;
+let touchStartX = 0;
 
 function changeSchedule(direction) {
     currentDayIndex += direction;
@@ -65,45 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Визначення ширини екрану при завантаженні і зміна розкладу за потреби
     checkScreenWidth();
+
+    const scheduleContainer = document.querySelector('.shedule');
+    scheduleContainer.addEventListener('touchstart', handleTouchStart);
+    scheduleContainer.addEventListener('touchmove', handleTouchMove);
 });
 
-// Функція для перевірки ширини екрану і виклику зміни розкладу
-function checkScreenWidth() {
-    const screenWidth = window.innerWidth;
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
 
-    if (screenWidth <= 768) {
-        // Показати кнопки і запустити функціонал для маленького екрану
-        showButtons();
-    } else if (screenWidth > 768 && screenWidth <= 900) {
-        // Приховати кнопки і показати відповідний блок днів для екрану від 769px до 1024px
-        hideButtons();
-        showCurrentDayBlock();
-    } else {
-        // Показати весь розклад і сховати кнопки для великого екрану
-        hideButtons();
-        showAllDayBlocks();
+function handleTouchMove(event) {
+    const touchEndX = event.touches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
+
+    if (Math.abs(deltaX) > 50) {
+        const direction = deltaX > 0 ? 1 : -1;
+        changeSchedule(direction);
+
+        touchStartX = 0;
     }
 }
 
-// Функція для відображення кнопок
-function showButtons() {
-    const navButtons = document.querySelector('.schedule-nav');
-    if (navButtons) {
-        navButtons.style.display = 'flex';
-    }
-}
-
-// Функція для приховування кнопок
-function hideButtons() {
-    const navButtons = document.querySelector('.schedule-nav');
-    if (navButtons) {
-        navButtons.style.display = 'none';
-    }
-}
-
-// Функція для оновлення відображення розкладу
 function updateScheduleDisplay() {
     daysBlocks.forEach((dayBlock, index) => {
         if (index === currentDayIndex) {
@@ -114,22 +100,54 @@ function updateScheduleDisplay() {
     });
 }
 
-// Функція для показу відповідного блоку днів
-function showCurrentDayBlock() {
-    updateScheduleDisplay();
+function checkScreenWidth() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 768) {
+        showButtons();
+    } else if (screenWidth > 768 && screenWidth <= 900) {
+        hideButtons();
+        showCurrentDayBlock();
+    } else {
+        hideButtons();
+        showAllDayBlocks();
+    }
 }
 
-// Функція для показу всіх блоків днів
+function showButtons() {
+    const navButtons = document.querySelector('.schedule-nav');
+    if (navButtons) {
+        navButtons.style.display = 'flex';
+    }
+}
+
+function hideButtons() {
+    const navButtons = document.querySelector('.schedule-nav');
+    if (navButtons) {
+        navButtons.style.display = 'none';
+    }
+}
+
+function showCurrentDayBlock() {
+    daysBlocks.forEach((dayBlock, index) => {
+        if (index === currentDayIndex) {
+            dayBlock.style.display = 'block';
+        } else {
+            dayBlock.style.display = 'none';
+        }
+    });
+}
+
 function showAllDayBlocks() {
     daysBlocks.forEach((dayBlock) => {
         dayBlock.style.display = 'block';
     });
 }
 
-// Визначення розміру екрану при зміні його розміру і зміна розкладу за потреби
 window.addEventListener('resize', () => {
     checkScreenWidth();
 });
+
 
 
 
