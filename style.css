@@ -1082,7 +1082,7 @@ footer {
     }
 
     .block_4 {
-        height: 57em;
+        height: 55em;
     }
     .shedule {
         overflow-x: auto;
@@ -1384,6 +1384,9 @@ footer {
         width: 100%;
     }
 
+    .block_4 {
+        height: 49em;
+    }
     .shedule_line_monday {
         position: absolute;
         margin-top: 15%;
