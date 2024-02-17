@@ -1032,9 +1032,7 @@ footer {
         font-size: 20px;
         width: 70%;
     }
-    .line_subscribe {
-        display: none;
-    }
+
     .sticker {
         width: 180px;
         height: 180px;
@@ -1109,6 +1107,9 @@ footer {
         position: absolute;
         margin-top: 6%;
         margin-left: -6.5%;
+    }
+    .line_subscribe2 {
+        display: none;
     }
 
     .schedule-nav {
@@ -1309,7 +1310,6 @@ footer {
         width: 100%;
     }
     .line_subscribe {
-        display: block;
         position: absolute;
         margin-top: 25%;
         margin-left: 15%;
@@ -1399,10 +1399,7 @@ footer {
         margin-top: 10%;
         margin-left: -12%;
     }
-    .shedule_polehall {
-        display: none;
-    }
-    .line_subscribe {
+    .shedule_halls {
         display: none;
     }
 
@@ -1447,7 +1444,7 @@ footer {
     }
 
     .form_block {
-        margin-top: 10%;
+        margin-top: 15%;
     }
 
     .contact_sections {
