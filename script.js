@@ -154,7 +154,7 @@ function showAllDayBlocks() {
 
 // map google
 function initMap() {
-  const myLatLng = { lat: -25.363, lng: 131.044 }; // Замініть це значеннями вашої локації
+  const myLatLng = { lat: 50.4219414, lng: 30.3801301 }; // Замініть це значеннями вашої локації
 
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,

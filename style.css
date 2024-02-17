@@ -1005,9 +1005,6 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-    body {
-
-    }
     #menu.fixed-menu {
         top: -7%;
     }
@@ -1388,16 +1385,19 @@ footer {
         height: 49em;
     }
     .shedule_line_monday {
+        display: none;
         position: absolute;
         margin-top: 15%;
         margin-left: -11%;
     }
     .shedule_line_tuesday {
+        display: none;
         position: absolute;
         margin-top: 13%;
         margin-left: -12%;
     }
     .shedule_line_saturday {
+        display: none;
         position: absolute;
         margin-top: 10%;
         margin-left: -12%;
@@ -1828,12 +1828,6 @@ footer {
     }
     .slide {
         padding-right: 0px;
-    }
-    .slides {
-        
-    }
-    .member_foto {
-        
     }
 
     .map {
