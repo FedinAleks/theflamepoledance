@@ -584,7 +584,7 @@ h2 {
     letter-spacing: 0.64px;
 }
 .subcribe2_text2 {
-    margin-top: 0%;
+    margin-top: -3%;
     font-size: 32px;
     font-weight: 600;
     letter-spacing: 1.28px;
@@ -1132,6 +1132,10 @@ footer {
         opacity: 0.8;
     }
 
+    .subcribe2_text2 {
+        margin-top: -8%;
+    }
+
     .price_section {
         max-width: 400px;
         max-height: 80px;
@@ -1298,6 +1302,7 @@ footer {
         font-size: 14px;
     }
     .subcribe_text2 {
+        margin-top: -9%;
         font-size: 24px;
     }
 
